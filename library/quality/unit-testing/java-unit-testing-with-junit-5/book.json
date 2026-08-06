@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "java-unit-testing-with-junit-5",
+  "title": "Java Unit Testing with JUnit 5",
+  "subtitle": "Test Driven Development with JUnit 5",
+  "authors": [
+    "Shekhar Gulati",
+    "Rahul Sharma"
+  ],
+  "year": 2017,
+  "edition": null,
+  "publisher": "Apress",
+  "pages": 158,
+  "kind": "book",
+  "category": "quality",
+  "subcategory": "unit-testing",
+  "tags": [
+    "tdd",
+    "testing"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3695519,
+      "md5": "e1be3350c6d785ded9885febfd8e1445"
+    }
+  ]
+}

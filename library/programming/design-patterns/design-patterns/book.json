@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "design-patterns",
+  "title": "Design Patterns",
+  "subtitle": "Elements of Reusable Object-Oriented Software",
+  "authors": [
+    "Erich Gamma",
+    "Richard Helm",
+    "Ralph Johnson",
+    "John M. Vlissides"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "Addison-Wesley",
+  "pages": 431,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "design-patterns",
+  "tags": [
+    "design-patterns",
+    "oop"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 4254073,
+      "md5": "4963a7703acf363425e8099d6b12d2dc"
+    }
+  ]
+}

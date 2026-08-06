@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "spring-boot-in-action",
+  "title": "Spring Boot in Action",
+  "subtitle": null,
+  "authors": [
+    "Craig Walls"
+  ],
+  "year": 2016,
+  "edition": null,
+  "publisher": "Manning Publications",
+  "pages": 266,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "spring",
+  "tags": [
+    "java",
+    "spring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6930985,
+      "md5": "0072f926be31ac82eee5b8e3c159d52d"
+    }
+  ]
+}

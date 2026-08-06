@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "java-performance",
+  "title": "[Java Performance",
+  "subtitle": null,
+  "authors": [
+    "The Definitive Guide]"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 425,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "java",
+  "tags": [
+    "java",
+    "jvm"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 13317201,
+      "md5": "3179e3a8f96f85b551748d8a082dbf51"
+    }
+  ]
+}

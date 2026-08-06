@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "designing-web-apis",
+  "title": "Designing Web APIs",
+  "subtitle": null,
+  "authors": [
+    "Brenda Jin",
+    "Saurabh Sahni",
+    "Amir Shevat"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 232,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "apis",
+  "tags": [
+    "api",
+    "rest"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 10031089,
+      "md5": "49ca80150d5e18db0cd985c271f0fbbe"
+    }
+  ]
+}

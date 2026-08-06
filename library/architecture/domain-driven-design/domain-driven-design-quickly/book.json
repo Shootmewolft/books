@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "domain-driven-design-quickly",
+  "title": "Domain-Driven Design Quickly",
+  "subtitle": null,
+  "authors": [
+    "Abel Avram",
+    "Floyd Marinescu"
+  ],
+  "year": 2006,
+  "edition": null,
+  "publisher": null,
+  "pages": 106,
+  "kind": "guide",
+  "category": "architecture",
+  "subcategory": "domain-driven-design",
+  "tags": [
+    "ddd"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1247416,
+      "md5": "223c27635f29b3c7ceee7d369bfff6d1"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mysql-cookbook-3e",
+  "title": "MySQL Cookbook",
+  "subtitle": null,
+  "authors": [
+    "Paul DuBois"
+  ],
+  "year": null,
+  "edition": 3,
+  "publisher": "O'Reilly Media",
+  "pages": 866,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "mysql",
+  "tags": [
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 7060139,
+      "md5": "49906537bdaed47a70c3cfc0d8942729"
+    }
+  ]
+}

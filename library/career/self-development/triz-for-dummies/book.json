@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "triz-for-dummies",
+  "title": "TRIZ For Dummies",
+  "subtitle": null,
+  "authors": [
+    "Lilly Haines-Gadd"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 367,
+  "kind": "book",
+  "category": "career",
+  "subcategory": "self-development",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6908281,
+      "md5": "eac66305dc88f0b5e1af24512db0d416"
+    }
+  ]
+}

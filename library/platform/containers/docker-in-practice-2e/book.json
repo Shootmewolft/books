@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "docker-in-practice-2e",
+  "title": "Docker in Practice",
+  "subtitle": null,
+  "authors": [
+    "Ian Miell",
+    "Aidan Hobson Sayers"
+  ],
+  "year": 2019,
+  "edition": 2,
+  "publisher": "Manning Publications",
+  "pages": 456,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "containers",
+  "tags": [
+    "containers",
+    "docker"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 7995485,
+      "md5": "995643971fdd390f23da7448e3d1acc8"
+    }
+  ]
+}

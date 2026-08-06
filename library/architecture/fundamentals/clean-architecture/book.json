@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "clean-architecture",
+  "title": "Clean Architecture",
+  "subtitle": "A Craftsman's Guide to Software Structure and Design",
+  "authors": [
+    "Robert C. Martin"
+  ],
+  "year": 2017,
+  "edition": null,
+  "publisher": null,
+  "pages": 429,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "fundamentals",
+  "tags": [
+    "design-patterns",
+    "oop"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 6582626,
+      "md5": "4443ee15eeb31720fcd1324d5652ede7"
+    },
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 8449671,
+      "md5": "7cc9c8eeb7eacd94bbe8da0ae94de110"
+    }
+  ]
+}

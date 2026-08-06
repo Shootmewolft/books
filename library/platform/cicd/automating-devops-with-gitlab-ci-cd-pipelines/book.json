@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "automating-devops-with-gitlab-ci-cd-pipelines",
+  "title": "Automating DevOps with GitLab CI_CD Pipelines",
+  "subtitle": "Build efficient CI_CD pipelines to verify, secure, and deploy your code using real-life examples",
+  "authors": [
+    "Christopher Cowell",
+    "Nicholas Lotz",
+    "Chris Timberlake"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 348,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "cicd",
+  "tags": [
+    "devops"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 28513821,
+      "md5": "af307e44ad81e38089ba8c869ab6c9bc"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "grokking-the-advanced-system-design-interview",
+  "title": "Grokking the Advanced System Design Interview",
+  "subtitle": null,
+  "authors": [],
+  "year": 2021,
+  "edition": null,
+  "publisher": null,
+  "pages": 397,
+  "kind": "guide",
+  "category": "craft",
+  "subcategory": "interviews",
+  "tags": [
+    "distributed-systems",
+    "interviews",
+    "system-design"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 28193757,
+      "md5": "77325d7ad47ef5471fb5dae8cb147b21"
+    }
+  ]
+}

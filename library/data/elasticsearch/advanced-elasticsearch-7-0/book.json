@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "advanced-elasticsearch-7-0",
+  "title": "Advanced Elasticsearch 7.0",
+  "subtitle": "A practical guide to designing, indexing, and querying advanced distributed search engines",
+  "authors": [
+    "Wai Tak Wong"
+  ],
+  "year": 2019,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 538,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "elasticsearch",
+  "tags": [
+    "indexing",
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 77393244,
+      "md5": "0113ade3b5a2fe22003391181bc8f5da"
+    }
+  ]
+}

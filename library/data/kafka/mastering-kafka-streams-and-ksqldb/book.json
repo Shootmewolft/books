@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mastering-kafka-streams-and-ksqldb",
+  "title": "Mastering Kafka Streams and ksqlDB",
+  "subtitle": null,
+  "authors": [
+    "Mitch Seymour"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 436,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "kafka",
+  "tags": [
+    "kafka",
+    "streaming"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 9875436,
+      "md5": "282da2ab7822bf17f373c6b38d9ad56e"
+    }
+  ]
+}

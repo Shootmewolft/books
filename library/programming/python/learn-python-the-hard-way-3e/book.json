@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "learn-python-the-hard-way-3e",
+  "title": "Learn Python the Hard Way",
+  "subtitle": "A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code",
+  "authors": [
+    "Zed A. Shaw"
+  ],
+  "year": 2013,
+  "edition": 3,
+  "publisher": "Addison-Wesley",
+  "pages": 306,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "python",
+  "tags": [
+    "python"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2666484,
+      "md5": "7b5e5a8913334817ffba58273df9a7ce"
+    }
+  ]
+}

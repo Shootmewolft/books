@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "effective-mysql-optimizing-sql-statements",
+  "title": "Effective MySQL Optimizing SQL Statements",
+  "subtitle": null,
+  "authors": [
+    "Ronald Bradford"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 182,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "mysql",
+  "tags": [
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2161197,
+      "md5": "bdac2ea0eb6eccaa6235639d8c885a01"
+    }
+  ]
+}

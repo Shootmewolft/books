@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "microservices-patterns",
+  "title": "Microservices Patterns",
+  "subtitle": "With examples in Java",
+  "authors": [
+    "Chris Richardson"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": "Manning Publications",
+  "pages": 522,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "microservices",
+  "tags": [
+    "design-patterns",
+    "java",
+    "microservices",
+    "system-design"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5964809,
+      "md5": "1d08603a7452d4496fdb64f05c35b784"
+    }
+  ]
+}

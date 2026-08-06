@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "operating-system-concepts-essentials",
+  "title": "Operating System Concepts Essentials",
+  "subtitle": null,
+  "authors": [
+    "Abraham Silberschatz",
+    "Peter B. Galvin",
+    "Greg Gagne"
+  ],
+  "year": 2013,
+  "edition": null,
+  "publisher": "Wiley",
+  "pages": 782,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5990693,
+      "md5": "b85f52d45f6cc2d8eebfa5b799cdba4a"
+    }
+  ]
+}

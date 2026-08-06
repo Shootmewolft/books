@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "a-developers-essential-guide-to-docker-compose",
+  "title": "A Developer's Essential Guide to Docker Compose",
+  "subtitle": "Simplify the development and orchestration of multi-container applications -Emmanouil Gkatziouras",
+  "authors": [],
+  "year": 2022,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 264,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "containers",
+  "tags": [
+    "containers",
+    "docker"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 18262302,
+      "md5": "23b987691a15df5e1d89da7fcf1e5fc1"
+    }
+  ]
+}

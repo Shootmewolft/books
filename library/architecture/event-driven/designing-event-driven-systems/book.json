@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "designing-event-driven-systems",
+  "title": "Designing Event-Driven Systems",
+  "subtitle": null,
+  "authors": [
+    "Ben Stopford"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 166,
+  "kind": "guide",
+  "category": "architecture",
+  "subcategory": "event-driven",
+  "tags": [
+    "event-driven",
+    "kafka",
+    "streaming"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5348640,
+      "md5": "8a67aefd17b5e2acd51acee7b268beb7"
+    }
+  ]
+}

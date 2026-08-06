@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "refactoring",
+  "title": "Refactoring",
+  "subtitle": "Improving the Design of Existing Code",
+  "authors": [
+    "Martin Fowler"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 455,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "code-quality",
+  "tags": [
+    "design-patterns",
+    "refactoring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 12442507,
+      "md5": "59d9309e6ee8107844bcfe6e4bdc6c2e"
+    }
+  ]
+}

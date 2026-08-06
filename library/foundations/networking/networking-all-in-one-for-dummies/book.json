@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "networking-all-in-one-for-dummies",
+  "title": "Networking All-in-One For Dummies",
+  "subtitle": null,
+  "authors": [
+    "Doug Lowe"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "Wiley",
+  "pages": 1059,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 44018587,
+      "md5": "c9cd4f2d962536acdbc6b060e51e9cda"
+    }
+  ]
+}

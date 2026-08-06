@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "practical-unit-testing-with-junit-and-mockito",
+  "title": "Practical Unit Testing with JUnit and Mockito",
+  "subtitle": null,
+  "authors": [
+    "Tomek Kaczanowsk"
+  ],
+  "year": 2013,
+  "edition": null,
+  "publisher": null,
+  "pages": 310,
+  "kind": "book",
+  "category": "quality",
+  "subcategory": "unit-testing",
+  "tags": [
+    "tdd",
+    "testing"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6590725,
+      "md5": "a7313e752ef3a5eeb8c73c4feca33b59"
+    }
+  ]
+}

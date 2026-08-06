@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "best-practices-for-optimizing-postgres-query-performance",
+  "title": "Best Practices for Optimizing Postgres Query Performance",
+  "subtitle": null,
+  "authors": [],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 26,
+  "kind": "guide",
+  "category": "data",
+  "subcategory": "postgresql",
+  "tags": [
+    "performance",
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1847041,
+      "md5": "781eb16131d78e750a047b834c1079cb"
+    }
+  ]
+}

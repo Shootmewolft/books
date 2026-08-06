@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "software-architecture-the-hard-parts",
+  "title": "Software Architecture: The Hard Parts",
+  "subtitle": null,
+  "authors": [
+    "Neal Ford",
+    "Mark Richards",
+    "Pramod Sadalage",
+    "Zhamak Dehghani"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 462,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "fundamentals",
+  "tags": [
+    "distributed-systems",
+    "microservices"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 15918800,
+      "md5": "92b735bc1e19d46614f0a849c99246fc"
+    }
+  ]
+}

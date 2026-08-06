@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "a-philosophy-of-software-design",
+  "title": "A Philosophy of Software Design",
+  "subtitle": null,
+  "authors": [
+    "John Ousterhout"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": null,
+  "pages": 188,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "fundamentals",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1659085,
+      "md5": "7890a0bbb0d29e013d371eaa1a4aaaa7"
+    }
+  ]
+}

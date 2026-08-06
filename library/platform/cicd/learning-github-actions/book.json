@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "learning-github-actions",
+  "title": "Learning GitHub Actions",
+  "subtitle": "Automation and Integration of CI_CD with GitHub",
+  "authors": [
+    "Brent Laster"
+  ],
+  "year": 2023,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 414,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "cicd",
+  "tags": [
+    "devops"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 23964682,
+      "md5": "1830c563a896654140f5b5d643cf6566"
+    }
+  ]
+}

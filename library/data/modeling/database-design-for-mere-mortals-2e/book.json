@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "database-design-for-mere-mortals-2e",
+  "title": "Database design for mere mortals",
+  "subtitle": "a hands-on guide to relational database design",
+  "authors": [
+    "Michael James Hernandez"
+  ],
+  "year": null,
+  "edition": 2,
+  "publisher": "Addison-Wesley Professional",
+  "pages": 690,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "modeling",
+  "tags": [
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3954573,
+      "md5": "37f245222f6b223e3b32873c05b268fa"
+    }
+  ]
+}

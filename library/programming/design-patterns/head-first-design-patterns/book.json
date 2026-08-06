@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "head-first-design-patterns",
+  "title": "Head First Design Patterns",
+  "subtitle": null,
+  "authors": [
+    "Eric Freeman",
+    "Elisabeth Robson"
+  ],
+  "year": 2004,
+  "edition": 1,
+  "publisher": "O'Reilly Media",
+  "pages": 681,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "design-patterns",
+  "tags": [
+    "design-patterns",
+    "java",
+    "oop"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 28022821,
+      "md5": "f7a90778863edfdf15f36ca0ccc5d4ce"
+    }
+  ]
+}

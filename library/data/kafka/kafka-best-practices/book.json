@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "kafka-best-practices",
+  "title": "Kafka Best Practices",
+  "subtitle": null,
+  "authors": [
+    "Yeva Byzek"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 39,
+  "kind": "guide",
+  "category": "data",
+  "subcategory": "kafka",
+  "tags": [
+    "kafka",
+    "performance",
+    "streaming"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1682142,
+      "md5": "a283e0bf1f33a081364269bcef8bfa11"
+    }
+  ]
+}

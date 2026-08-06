@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "introduction-to-algorithms-3e",
+  "title": "Introduction to algorithms",
+  "subtitle": null,
+  "authors": [
+    "Thomas H. Cormen",
+    "Charles E. Leiserson",
+    "Ronald L. Rivest",
+    "Clifford Stein"
+  ],
+  "year": 2009,
+  "edition": 3,
+  "publisher": "The MIT Press",
+  "pages": 1313,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "algorithms",
+  "tags": [
+    "algorithms"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5076764,
+      "md5": "f49fcf4849cd50d3e60d85a540b6006e"
+    }
+  ]
+}

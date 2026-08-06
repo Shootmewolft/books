@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-art-of-unit-testing-with-examples-in-c",
+  "title": "The Art of Unit Testing, with examples in C",
+  "subtitle": null,
+  "authors": [
+    "Roy Osherove"
+  ],
+  "year": 2014,
+  "edition": null,
+  "publisher": "Manning",
+  "pages": 294,
+  "kind": "book",
+  "category": "quality",
+  "subcategory": "unit-testing",
+  "tags": [
+    "tdd",
+    "testing"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 14847704,
+      "md5": "d311de829cfc03a2569ccf52e7d6b187"
+    }
+  ]
+}

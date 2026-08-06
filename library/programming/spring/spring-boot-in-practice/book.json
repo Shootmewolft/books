@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "spring-boot-in-practice",
+  "title": "Spring Boot in Practice",
+  "subtitle": null,
+  "authors": [
+    "Somnath Musib"
+  ],
+  "year": 2022,
+  "edition": null,
+  "publisher": "Manning Publications",
+  "pages": 489,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "spring",
+  "tags": [
+    "java",
+    "spring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 19570407,
+      "md5": "b82dde02297a0866e4f1606ae0e75c13"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "web-scalability-for-startup-engineers",
+  "title": "Web scalability for startup engineers",
+  "subtitle": null,
+  "authors": [
+    "Ejsmont",
+    "Artur"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 417,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "fundamentals",
+  "tags": [
+    "scalability"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 16145775,
+      "md5": "01e6d0f206da7e8239e65763709fa52b"
+    }
+  ]
+}

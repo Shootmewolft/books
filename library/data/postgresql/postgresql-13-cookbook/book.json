@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "postgresql-13-cookbook",
+  "title": "PostgreSQL 13 Cookbook",
+  "subtitle": "Over 120 recipes to build high-performance and fault-tolerant PostgreSQL database solutions",
+  "authors": [
+    "Vallarapu Naga Avinash Kumar"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 331,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "postgresql",
+  "tags": [
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5331833,
+      "md5": "6c8e547532d6a8cef63c34ffa1aef984"
+    }
+  ]
+}

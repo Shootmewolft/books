@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "machine-learning-design-interview",
+  "title": "Machine Learning Design Interview",
+  "subtitle": "Machine Learning System Design Interview",
+  "authors": [
+    "Khang Pham"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "Independently published",
+  "pages": 236,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "interviews",
+  "tags": [
+    "interviews",
+    "machine-learning",
+    "system-design"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 15539730,
+      "md5": "ff27b93db38d6f43a4ef0fe52534705b"
+    }
+  ]
+}

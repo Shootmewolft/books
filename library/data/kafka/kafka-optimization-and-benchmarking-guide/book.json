@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "kafka-optimization-and-benchmarking-guide",
+  "title": "Kafka Optimization and Benchmarking Guide",
+  "subtitle": null,
+  "authors": [],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 18,
+  "kind": "guide",
+  "category": "data",
+  "subcategory": "kafka",
+  "tags": [
+    "kafka",
+    "performance",
+    "streaming"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1160373,
+      "md5": "9a96c6bae06338cbfc36d38e03fb292a"
+    }
+  ]
+}

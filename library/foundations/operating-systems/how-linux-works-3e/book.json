@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "how-linux-works-3e",
+  "title": "How Linux Works",
+  "subtitle": "What Every Superuser Should Know",
+  "authors": [
+    "Brian Ward"
+  ],
+  "year": 2021,
+  "edition": 3,
+  "publisher": "No Starch Press",
+  "pages": 464,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "linux",
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 17890343,
+      "md5": "a4534afa6d85d135d0a7f8cadcf1fbdb"
+    }
+  ]
+}

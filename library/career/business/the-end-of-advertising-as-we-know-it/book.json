@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-end-of-advertising-as-we-know-it",
+  "title": "The End of Advertising as We Know It",
+  "subtitle": null,
+  "authors": [
+    "Sergio Zyman",
+    "Armin Brott"
+  ],
+  "year": 2002,
+  "edition": null,
+  "publisher": null,
+  "pages": 253,
+  "kind": "book",
+  "category": "career",
+  "subcategory": "business",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 890610,
+      "md5": "27b4f21d57bcbb184a035c98020fbbc4"
+    }
+  ]
+}

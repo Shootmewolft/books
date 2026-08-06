@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "pipeline-as-code",
+  "title": "Pipeline as Code",
+  "subtitle": "Continuous Delivery with Jenkins, Kubernetes, and Terraform",
+  "authors": [
+    "Mohamed Labouardy"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "Manning",
+  "pages": 832,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "cicd",
+  "tags": [
+    "devops"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 53484504,
+      "md5": "ac8efd9b4ea2815779097f188c7e59a3"
+    }
+  ]
+}

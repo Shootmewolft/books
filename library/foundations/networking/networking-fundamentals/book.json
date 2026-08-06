@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "networking-fundamentals",
+  "title": "Networking Fundamentals",
+  "subtitle": "Develop the networking skills required to pass the Microsoft MTA Networking Fundamentals Exam 98-366",
+  "authors": [
+    "Gordon Davies"
+  ],
+  "year": 2019,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 495,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 38630264,
+      "md5": "28b5a67759b96eb648c34c8b35f26ec0"
+    }
+  ]
+}

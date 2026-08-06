@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "software-engineering-at-google",
+  "title": "Software Engineering at Google",
+  "subtitle": "Lessons Learned from Programming Over Time",
+  "authors": [
+    "Titus Winters",
+    "Tom Manshreck",
+    "Hyrum Wright"
+  ],
+  "year": 2020,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 602,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "engineering-practice",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 13597109,
+      "md5": "19e06b97a1a518fb8def778b8423ea91"
+    }
+  ]
+}

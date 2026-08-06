@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "undisturbed-rest",
+  "title": "Undisturbed REST",
+  "subtitle": "A Guide to Designing the Perfect API",
+  "authors": [
+    "Michael Stowe"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 196,
+  "kind": "guide",
+  "category": "programming",
+  "subcategory": "apis",
+  "tags": [
+    "api",
+    "rest",
+    "system-design"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 20403242,
+      "md5": "863b413e891a420e5b0f58fca79ce6d4"
+    }
+  ]
+}

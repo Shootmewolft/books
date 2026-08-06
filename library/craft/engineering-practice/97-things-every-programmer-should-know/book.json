@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "97-things-every-programmer-should-know",
+  "title": "97 Things Every Programmer Should Know",
+  "subtitle": null,
+  "authors": [
+    "Kevlin Henney"
+  ],
+  "year": 2010,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 257,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "engineering-practice",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2111426,
+      "md5": "b06c05e78249a496b3d2a5e69ecac28a"
+    }
+  ]
+}

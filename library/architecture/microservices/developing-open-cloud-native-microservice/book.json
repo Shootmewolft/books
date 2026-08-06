@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "developing-open-cloud-native-microservice",
+  "title": "developing-open-cloud-native-microservice",
+  "subtitle": null,
+  "authors": [
+    "Graham Charters",
+    "Sebastian Daschner",
+    "Pratik Patel",
+    "Steve Poole"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 96,
+  "kind": "guide",
+  "category": "architecture",
+  "subcategory": "microservices",
+  "tags": [
+    "cloud-native",
+    "microservices"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2184603,
+      "md5": "4bd290000c4c2fedb528984da0d7ddda"
+    }
+  ]
+}

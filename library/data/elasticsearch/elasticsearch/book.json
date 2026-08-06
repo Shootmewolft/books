@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "elasticsearch",
+  "title": "Elasticsearch",
+  "subtitle": "The Definitive Guide",
+  "authors": [
+    "Clinton Gormley",
+    "Zachary Tong"
+  ],
+  "year": 2015,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 719,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "elasticsearch",
+  "tags": [
+    "indexing",
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6303963,
+      "md5": "d2f26c2bb375714e037aa84f7f67a356"
+    }
+  ]
+}

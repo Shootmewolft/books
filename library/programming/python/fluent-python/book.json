@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "fluent-python",
+  "title": "Fluent Python",
+  "subtitle": "Clear, Concise, and Effective Programming",
+  "authors": [
+    "Luciano Ramalho"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 1011,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "python",
+  "tags": [
+    "python"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 16456139,
+      "md5": "6b8f1e751c6d6b82a49cc155099f9949"
+    }
+  ]
+}

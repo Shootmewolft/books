@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "network-programmability-and-automation",
+  "title": "Network Programmability and Automation",
+  "subtitle": "Skills for the Next-Generation Network Engineer",
+  "authors": [
+    "Jason Edelman",
+    "Scott S. Lowe",
+    "Matt Oswalt"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": null,
+  "pages": 581,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 10620009,
+      "md5": "4c41002a94028f7af36de2d7ba77c21b"
+    }
+  ]
+}

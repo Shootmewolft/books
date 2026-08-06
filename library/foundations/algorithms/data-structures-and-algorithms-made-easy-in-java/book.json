@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "data-structures-and-algorithms-made-easy-in-java",
+  "title": "Data structures and algorithms made easy in Java",
+  "subtitle": "data structure and algorithmic puzzles",
+  "authors": [
+    "Narasimha Karumanchi"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": null,
+  "pages": 412,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "algorithms",
+  "tags": [
+    "algorithms"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 7004111,
+      "md5": "7a2f21b919c28655a986bf903cb9210c"
+    }
+  ]
+}

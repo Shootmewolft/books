@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-mythical-man-month",
+  "title": "The Mythical Man-Month",
+  "subtitle": "Essays on Software Engineering",
+  "authors": [
+    "Frederick P. Brooks Jr."
+  ],
+  "year": 1975,
+  "edition": null,
+  "publisher": null,
+  "pages": 212,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "team-culture",
+  "tags": [
+    "leadership",
+    "management"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 11463151,
+      "md5": "64243c00340de0ee01b417c4c44cf13b"
+    }
+  ]
+}

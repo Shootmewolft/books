@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "microservice-pattern-language",
+  "title": "Microservice Pattern Language",
+  "subtitle": null,
+  "authors": [
+    "Chris Richardson"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 1,
+  "kind": "reference",
+  "category": "architecture",
+  "subcategory": "microservices",
+  "tags": [
+    "design-patterns",
+    "microservices"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 134942,
+      "md5": "f90332a96f1c49826320aa088072e76f"
+    }
+  ]
+}

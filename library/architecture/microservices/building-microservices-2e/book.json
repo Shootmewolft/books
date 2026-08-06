@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "building-microservices-2e",
+  "title": "Building Microservices",
+  "subtitle": null,
+  "authors": [
+    "Newman",
+    "Sam;"
+  ],
+  "year": null,
+  "edition": 2,
+  "publisher": null,
+  "pages": 615,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "microservices",
+  "tags": [
+    "microservices"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 17721243,
+      "md5": "01c3abc044d7bd3aac5dac4c9c95c545"
+    }
+  ]
+}

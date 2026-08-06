@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "your-code-as-a-crime-scene",
+  "title": "Your Code as a Crime Scene",
+  "subtitle": "Use Forensic Techniques to Arrest Defects, Bottlenecks, and Bad Design in Your Programs",
+  "authors": [
+    "Adam Tornhill"
+  ],
+  "year": 2015,
+  "edition": null,
+  "publisher": null,
+  "pages": 208,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "code-quality",
+  "tags": [
+    "legacy-code",
+    "refactoring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 7186023,
+      "md5": "4ddd818d32d5c7e054e0aab7d80f583f"
+    }
+  ]
+}

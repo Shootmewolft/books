@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mastering-mqtt",
+  "title": "Mastering MQTT",
+  "subtitle": null,
+  "authors": [
+    "yangxiaojuan"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 60,
+  "kind": "guide",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [
+    "messaging",
+    "mqtt"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3442054,
+      "md5": "135b55278ca67a302d3703971cfffb03"
+    }
+  ]
+}

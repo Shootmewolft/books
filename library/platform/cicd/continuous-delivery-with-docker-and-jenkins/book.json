@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "continuous-delivery-with-docker-and-jenkins",
+  "title": "Continuous Delivery with Docker and Jenkins",
+  "subtitle": "Delivering software at scale",
+  "authors": [
+    "Rafal Leszko"
+  ],
+  "year": 2017,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 326,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "cicd",
+  "tags": [
+    "devops"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3556630,
+      "md5": "a61a4ba4c5bca8cd38a9cfc786bd4512"
+    }
+  ]
+}

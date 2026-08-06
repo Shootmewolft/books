@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "regular-expressions-cookbook-2e",
+  "title": "Regular Expressions Cookbook",
+  "subtitle": null,
+  "authors": [
+    "Jan Goyvaerts",
+    "Steven Levithan"
+  ],
+  "year": 2012,
+  "edition": 2,
+  "publisher": "O'Reilly Media",
+  "pages": 612,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "tooling",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 11264362,
+      "md5": "4fe602174fcafa8724dd920a2319d776"
+    }
+  ]
+}

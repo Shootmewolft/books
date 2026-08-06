@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "data-modeling-with-snowflake",
+  "title": "Data Modeling with Snowflake",
+  "subtitle": "A practical guide to accelerating Snowflake development using universal data modeling techniques",
+  "authors": [
+    "Serge Gershkovich"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 324,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "modeling",
+  "tags": [
+    "cloud-native",
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 32903176,
+      "md5": "d6ec917f245e471f643522911b17f86b"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "computer-networking",
+  "title": "Computer Networking",
+  "subtitle": "A Top-Down Approach",
+  "authors": [
+    "Kurose",
+    "James",
+    "Ross",
+    "Keith"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "Pearson",
+  "pages": 775,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 19972617,
+      "md5": "8b547bcdf967b08655d6360f6fe9d809"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "fundamentals-of-software-architecture",
+  "title": "Fundamentals of Software Architecture",
+  "subtitle": "An Engineering Approach",
+  "authors": [
+    "Mark Richards",
+    "Neal Ford"
+  ],
+  "year": 2020,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 422,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "fundamentals",
+  "tags": [
+    "design-patterns"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 22600750,
+      "md5": "debc229f481dcec7c04d7b163213db6f"
+    }
+  ]
+}

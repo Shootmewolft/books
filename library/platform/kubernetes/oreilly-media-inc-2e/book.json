@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "oreilly-media-inc-2e",
+  "title": "O'Reilly Media, Inc.",
+  "subtitle": null,
+  "authors": [
+    "Cloud Native DevOps with Kubernetes",
+    "Justin Domingus_ John Arundel"
+  ],
+  "year": null,
+  "edition": 2,
+  "publisher": "O'Reilly Media",
+  "pages": 79,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "kubernetes",
+  "tags": [
+    "cloud-native",
+    "kubernetes"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1662489,
+      "md5": "d3fa863c7bab721f81a3a7832e8c0f5e"
+    }
+  ]
+}

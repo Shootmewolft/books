@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "modern-software-engineering",
+  "title": "Modern Software Engineering",
+  "subtitle": "Doing What Works to Build Better Software Faster",
+  "authors": [
+    "David Farley"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "Addison-Wesley Professional",
+  "pages": 256,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "engineering-practice",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6468845,
+      "md5": "573b8965147fadc6f650a852495eec05"
+    }
+  ]
+}

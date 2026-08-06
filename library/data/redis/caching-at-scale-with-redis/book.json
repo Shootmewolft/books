@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "caching-at-scale-with-redis",
+  "title": "Caching at Scale with Redis",
+  "subtitle": null,
+  "authors": [],
+  "year": 2021,
+  "edition": null,
+  "publisher": null,
+  "pages": 104,
+  "kind": "guide",
+  "category": "data",
+  "subcategory": "redis",
+  "tags": [
+    "caching",
+    "nosql",
+    "scalability"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1470936,
+      "md5": "68b7946eb432e23f60e90ca78d67be7c"
+    }
+  ]
+}

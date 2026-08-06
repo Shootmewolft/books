@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-software-architect-elevator",
+  "title": "The Software Architect Elevator",
+  "subtitle": null,
+  "authors": [
+    "Gregor Hohpe"
+  ],
+  "year": 2020,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 366,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "team-culture",
+  "tags": [
+    "leadership",
+    "management"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 20046251,
+      "md5": "1d9de08809c10b3650da9712bda55fa8"
+    }
+  ]
+}

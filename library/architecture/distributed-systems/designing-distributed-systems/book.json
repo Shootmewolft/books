@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "designing-distributed-systems",
+  "title": "Designing Distributed Systems",
+  "subtitle": "Patterns and Paradigms for Scalable, Reliable Services",
+  "authors": [
+    "Brendan Burns"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": null,
+  "pages": 165,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "distributed-systems",
+  "tags": [
+    "distributed-systems",
+    "kubernetes",
+    "system-design"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6922568,
+      "md5": "e7a1c8ef00cccaec3f84b3e9b0979b55"
+    }
+  ]
+}

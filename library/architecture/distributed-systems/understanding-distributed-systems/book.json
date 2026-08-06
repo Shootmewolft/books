@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "understanding-distributed-systems",
+  "title": "Understanding Distributed Systems",
+  "subtitle": "What every developer should know about large distributed applications",
+  "authors": [
+    "Roberto Vitillo"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": null,
+  "pages": 226,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "distributed-systems",
+  "tags": [
+    "distributed-systems"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 10660083,
+      "md5": "fdd863309f8ad3402330f2483a8a4751"
+    }
+  ]
+}

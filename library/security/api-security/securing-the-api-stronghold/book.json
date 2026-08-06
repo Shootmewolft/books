@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "securing-the-api-stronghold",
+  "title": "securing-the-api-stronghold",
+  "subtitle": null,
+  "authors": [
+    "Nordic APIs"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 118,
+  "kind": "guide",
+  "category": "security",
+  "subcategory": "api-security",
+  "tags": [
+    "api",
+    "security",
+    "web-security"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5846192,
+      "md5": "13ba50b0d259c55f7181602f8b266819"
+    }
+  ]
+}

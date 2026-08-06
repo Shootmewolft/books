@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "java-threads",
+  "title": "Java Threads",
+  "subtitle": null,
+  "authors": [
+    "Oaks",
+    "Scott_Wong",
+    "Henry"
+  ],
+  "year": 2004,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 360,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "concurrency",
+  "tags": [
+    "concurrency"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1595119,
+      "md5": "5415130ef21ae1bf36f390cec747f8fe"
+    }
+  ]
+}

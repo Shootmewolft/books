@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-design-of-the-unix-operating-system",
+  "title": "The Design of the UNIX Operating System",
+  "subtitle": null,
+  "authors": [
+    "Maurice J. Bach"
+  ],
+  "year": 1986,
+  "edition": null,
+  "publisher": "Prentice Hall",
+  "pages": 488,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6855544,
+      "md5": "f0d97c3e2144bb5fdaf9d4959c45f3e6"
+    }
+  ]
+}

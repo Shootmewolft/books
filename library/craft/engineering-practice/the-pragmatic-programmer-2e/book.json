@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-pragmatic-programmer-2e",
+  "title": "The Pragmatic Programmer",
+  "subtitle": "Your Journey to Mastery, 20th Anniversary Edition",
+  "authors": [
+    "David Thomas",
+    "Andrew Hunt"
+  ],
+  "year": 2019,
+  "edition": 2,
+  "publisher": "Addison-Wesley",
+  "pages": 340,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "engineering-practice",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 9061952,
+      "md5": "749715ae279edda68d73773a18529275"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "payment-systems-and-performance-improvement",
+  "title": "Payment Systems and Performance Improvement",
+  "subtitle": "Participation in Payment System Design",
+  "authors": [
+    "Bowey",
+    "Angela_ Thorpe",
+    "Richard"
+  ],
+  "year": 1989,
+  "edition": null,
+  "publisher": null,
+  "pages": 5,
+  "kind": "book",
+  "category": "career",
+  "subcategory": "business",
+  "tags": [
+    "system-design"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 231713,
+      "md5": "88379da27197d1d90239b17716be835b"
+    }
+  ]
+}

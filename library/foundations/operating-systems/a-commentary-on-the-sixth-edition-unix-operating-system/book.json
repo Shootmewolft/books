@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "a-commentary-on-the-sixth-edition-unix-operating-system",
+  "title": "A Commentary on the Sixth Edition UNIX Operating System",
+  "subtitle": null,
+  "authors": [
+    "John Lions"
+  ],
+  "year": 1977,
+  "edition": null,
+  "publisher": null,
+  "pages": 115,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 885780,
+      "md5": "c95a3258884fa266e915a3119797d720"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "operating-systems-in-depth",
+  "title": "Operating Systems In Depth",
+  "subtitle": "Design and Programming",
+  "authors": [
+    "Doeppner",
+    "Thomas W"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "Wiley",
+  "pages": 462,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 4484026,
+      "md5": "3b09ad8a36f1e363054cf88e9c3d7b15"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "architecting-distributed-transactional-applications",
+  "title": "Architecting Distributed Transactional Applications",
+  "subtitle": null,
+  "authors": [
+    "Guy Harrison",
+    "Andrew Marshall",
+    "Charles Custer"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 43,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "distributed-systems",
+  "tags": [
+    "distributed-systems"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 9644884,
+      "md5": "12427dfde56a6f1388fbad622aff8292"
+    }
+  ]
+}

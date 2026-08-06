@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-effective-engineer",
+  "title": "The Effective Engineer",
+  "subtitle": null,
+  "authors": [
+    "Edmond Lau"
+  ],
+  "year": 2015,
+  "edition": null,
+  "publisher": null,
+  "pages": 210,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "engineering-practice",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 1680112,
+      "md5": "f90c791e12c67d18a7eb115f27d7f303"
+    },
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2321753,
+      "md5": "f2f3af18feeca9f102d2a9a9b7200d45"
+    }
+  ]
+}

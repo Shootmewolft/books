@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "summary-never-split-the-difference",
+  "title": "Summary: Never Split the Difference",
+  "subtitle": "Never Split the Difference: Negotiating As If Your Life Depended On It - by Chris Voss",
+  "authors": [
+    "EssentialInsight Summaries"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": null,
+  "pages": 58,
+  "kind": "guide",
+  "category": "career",
+  "subcategory": "negotiation",
+  "tags": [
+    "negotiation"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 234862,
+      "md5": "be93155167f5e96efc9d04f464ad9623"
+    },
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 538904,
+      "md5": "58b29aa2bc553346be456ecb50dc2a9b"
+    }
+  ]
+}

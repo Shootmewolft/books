@@ -1,0 +1,37 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "cloud-native-java",
+  "title": "Cloud Native Java",
+  "subtitle": "Designing resilient system with spring boot",
+  "authors": [
+    "Josh Long",
+    "Kenny Bastani"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 938,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "spring",
+  "tags": [
+    "java",
+    "spring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 3036633,
+      "md5": "ac8bb11a133f1276a4f9797bd32192de"
+    },
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 8576252,
+      "md5": "74de9244306445275198066c1ebe2ada"
+    }
+  ]
+}

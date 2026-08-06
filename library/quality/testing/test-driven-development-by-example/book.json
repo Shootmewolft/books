@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "test-driven-development-by-example",
+  "title": "Test-Driven Development by Example",
+  "subtitle": null,
+  "authors": [
+    "Kent Beck"
+  ],
+  "year": 2002,
+  "edition": null,
+  "publisher": "Addison-Wesley",
+  "pages": 66,
+  "kind": "book",
+  "category": "quality",
+  "subcategory": "testing",
+  "tags": [
+    "tdd",
+    "testing"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3540082,
+      "md5": "30ab27af52e60cda83bc64b00862f530"
+    }
+  ]
+}

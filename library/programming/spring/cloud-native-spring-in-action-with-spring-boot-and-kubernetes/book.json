@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "cloud-native-spring-in-action-with-spring-boot-and-kubernetes",
+  "title": "Cloud Native Spring in Action with Spring Boot And Kubernetes",
+  "subtitle": null,
+  "authors": [
+    "Thomas Vitale"
+  ],
+  "year": 2022,
+  "edition": null,
+  "publisher": "Manning Publications",
+  "pages": 971,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "spring",
+  "tags": [
+    "java",
+    "spring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 16371296,
+      "md5": "dbdd55ceafc37000741371636011782d"
+    }
+  ]
+}

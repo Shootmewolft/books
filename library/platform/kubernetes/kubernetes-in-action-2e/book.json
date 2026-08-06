@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "kubernetes-in-action-2e",
+  "title": "Kubernetes in Action",
+  "subtitle": null,
+  "authors": [
+    "Marko Lukša"
+  ],
+  "year": 2023,
+  "edition": 2,
+  "publisher": "Manning Publications",
+  "pages": null,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "kubernetes",
+  "tags": [
+    "cloud-native",
+    "containers",
+    "kubernetes"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 14149960,
+      "md5": "6f0c681e7a69df9127457a8bb37ad8f4"
+    }
+  ]
+}

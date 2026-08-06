@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "python-distilled",
+  "title": "Python Distilled",
+  "subtitle": null,
+  "authors": [
+    "David Beazley"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "Pearson",
+  "pages": 355,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "python",
+  "tags": [
+    "python"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3116327,
+      "md5": "62e6107c7f817d3354eba71120939764"
+    }
+  ]
+}

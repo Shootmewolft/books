@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "clean-code-tips-and-tricks",
+  "title": "Clean Code Tips and Tricks",
+  "subtitle": null,
+  "authors": [
+    "Lewis",
+    "Elijah"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 96,
+  "kind": "guide",
+  "category": "programming",
+  "subcategory": "code-quality",
+  "tags": [
+    "refactoring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2211484,
+      "md5": "1a56a0d5884bb64e2e44c6723dc879c2"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mastering-redis",
+  "title": "Mastering Redis",
+  "subtitle": null,
+  "authors": [
+    "Jeremy Nelson"
+  ],
+  "year": 2016,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": null,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "redis",
+  "tags": [
+    "caching",
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 5319158,
+      "md5": "c63cf93623e3abdb1f1c124a037bf795"
+    }
+  ]
+}

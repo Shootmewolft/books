@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "networking-and-kubernetes",
+  "title": "Networking and Kubernetes",
+  "subtitle": "A Layered Approach",
+  "authors": [
+    "James Strong",
+    "Vallery Lancey"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 341,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 14813030,
+      "md5": "d75fb38fed68302fb59620a59a810810"
+    }
+  ]
+}

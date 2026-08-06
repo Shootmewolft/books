@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "an-a-to-z-guidebook-on-microservices",
+  "title": "An a to Z Guidebook on Microservices",
+  "subtitle": "An Introduction Explaining Microservices and Their Patterns: Microservices Patterns Book",
+  "authors": [
+    "Nawda",
+    "Jarred"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "Independently published",
+  "pages": null,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "microservices",
+  "tags": [
+    "design-patterns",
+    "microservices"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 12903845,
+      "md5": "e15483a84034f47328305794414086fc"
+    }
+  ]
+}

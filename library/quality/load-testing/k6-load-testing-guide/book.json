@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "k6-load-testing-guide",
+  "title": "k6 Load Testing Guide",
+  "subtitle": null,
+  "authors": [],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 16,
+  "kind": "guide",
+  "category": "quality",
+  "subcategory": "load-testing",
+  "tags": [
+    "performance",
+    "testing"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 421870,
+      "md5": "d71be84d06ac09b926cfc92d062f1f03"
+    }
+  ]
+}

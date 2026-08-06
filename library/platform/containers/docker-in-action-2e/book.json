@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "docker-in-action-2e",
+  "title": "Docker in Action",
+  "subtitle": null,
+  "authors": [
+    "Jeff Nickoloff",
+    "Stephen Kuenzli"
+  ],
+  "year": 2019,
+  "edition": 2,
+  "publisher": "Manning Publications",
+  "pages": 337,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "containers",
+  "tags": [
+    "containers",
+    "docker"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3333625,
+      "md5": "2ebfbc1ab87da180f8cd63f458cf8aae"
+    }
+  ]
+}

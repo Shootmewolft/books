@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "introduction-to-java-programming-and-data-structures-11e",
+  "title": "Introduction to Java Programming and Data Structures",
+  "subtitle": "Comprehensive Version",
+  "authors": [
+    "Y. Daniel Liang"
+  ],
+  "year": 2017,
+  "edition": 11,
+  "publisher": "Pearson",
+  "pages": 1711,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "java",
+  "tags": [
+    "algorithms",
+    "java",
+    "jvm"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 25142384,
+      "md5": "5987b96f041b8f72320ef17c10b1b6b9"
+    }
+  ]
+}

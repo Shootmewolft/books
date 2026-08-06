@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "xv6-a-simple-unix-like-teaching-operating-system",
+  "title": "xv6: A Simple, Unix-like Teaching Operating System",
+  "subtitle": null,
+  "authors": [
+    "Russ Cox",
+    "Frans Kaashoek",
+    "Robert Morris"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 104,
+  "kind": "guide",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "linux",
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 510206,
+      "md5": "db163617d5d4ef52623d9a42a237188c"
+    }
+  ]
+}

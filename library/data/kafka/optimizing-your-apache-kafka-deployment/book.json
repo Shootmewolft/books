@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "optimizing-your-apache-kafka-deployment",
+  "title": "Optimizing Your Apache Kafka Deployment",
+  "subtitle": null,
+  "authors": [
+    "Yeva Byzek",
+    "© 2020 Confluent",
+    "Inc."
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 39,
+  "kind": "guide",
+  "category": "data",
+  "subcategory": "kafka",
+  "tags": [
+    "kafka",
+    "performance",
+    "streaming"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1080946,
+      "md5": "3ad555e29092a64857aea1cdf9d30303"
+    }
+  ]
+}

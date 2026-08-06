@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "database-internals",
+  "title": "Database Internals",
+  "subtitle": "A Deep Dive into How Distributed Data Systems Work",
+  "authors": [
+    "Alex Petrov"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 371,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "fundamentals",
+  "tags": [
+    "distributed-systems",
+    "indexing",
+    "performance"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 12606722,
+      "md5": "902ba0835e8e3e0262c236e3198e1ef5"
+    }
+  ]
+}

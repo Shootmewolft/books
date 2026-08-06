@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-art-of-multiprocessor-programming",
+  "title": "The Art of Multiprocessor Programming",
+  "subtitle": null,
+  "authors": [
+    "Maurice Herlihy",
+    "Nir Shavit"
+  ],
+  "year": 2012,
+  "edition": 1,
+  "publisher": "Morgan Kaufmann",
+  "pages": 537,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "concurrency",
+  "tags": [
+    "algorithms",
+    "concurrency"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5613968,
+      "md5": "9e076b60d687b1f5d446d67bcf1ee683"
+    }
+  ]
+}

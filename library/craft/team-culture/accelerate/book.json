@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "accelerate",
+  "title": "Accelerate",
+  "subtitle": "The Science of Lean Software and DevOps",
+  "authors": [
+    "Nicole Forsgren",
+    "Jez Humble",
+    "Gene Kim"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": null,
+  "pages": 315,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "team-culture",
+  "tags": [
+    "devops",
+    "leadership",
+    "management"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 6439082,
+      "md5": "634020a80617058aa8392c5af3c82a91"
+    },
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5040806,
+      "md5": "059d6a7a0524e20029a81edb392ce818"
+    }
+  ]
+}

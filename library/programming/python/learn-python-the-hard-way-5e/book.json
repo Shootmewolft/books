@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "learn-python-the-hard-way-5e",
+  "title": "Learn Python the Hard Way",
+  "subtitle": null,
+  "authors": [
+    "Zed A. Shaw"
+  ],
+  "year": 2024,
+  "edition": 5,
+  "publisher": "Addison-Wesley",
+  "pages": 348,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "python",
+  "tags": [
+    "python"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3617215,
+      "md5": "05a1b2f756fb0fa6d99cc3c29414eeff"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "elasticsearch-indexing",
+  "title": "Elasticsearch Indexing",
+  "subtitle": "Improve search experiences with ElasticSearch’s powerful indexing functionality – learn how with this practical ElasticSearch tutorial, packed with tips",
+  "authors": [
+    "Huseyin Akdogan"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 176,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "elasticsearch",
+  "tags": [
+    "indexing",
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6896685,
+      "md5": "0ac8577221442f7c9beb0825963a02a9"
+    }
+  ]
+}

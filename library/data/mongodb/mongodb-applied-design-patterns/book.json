@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mongodb-applied-design-patterns",
+  "title": "MongoDB Applied Design Patterns",
+  "subtitle": "Practical Use Cases with the Leading NoSQL Database",
+  "authors": [
+    "Rick Copeland"
+  ],
+  "year": 2013,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 175,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "mongodb",
+  "tags": [
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 9729582,
+      "md5": "76167614d03ae83cf2fad965e92f6065"
+    }
+  ]
+}

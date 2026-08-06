@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "kafka-in-action",
+  "title": "Kafka in Action",
+  "subtitle": null,
+  "authors": [
+    "Dylan Scott",
+    "Viktor Gamov",
+    "Dave Klein"
+  ],
+  "year": 2022,
+  "edition": null,
+  "publisher": "Manning Publications",
+  "pages": 272,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "kafka",
+  "tags": [
+    "kafka",
+    "streaming"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 14828120,
+      "md5": "92ee2370e5cab2e99bdd1a46b9f1009b"
+    }
+  ]
+}

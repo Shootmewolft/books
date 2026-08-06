@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "cassandra-the-defifinitive-guide",
+  "title": "Cassandra The Defifinitive Guide",
+  "subtitle": null,
+  "authors": [
+    "Jeff Carpenter",
+    "Eben Hewitt"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 428,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "cassandra",
+  "tags": [
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 11390414,
+      "md5": "5296443f373ed370727ea9eda9385d36"
+    }
+  ]
+}

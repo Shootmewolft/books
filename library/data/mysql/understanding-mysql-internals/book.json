@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "understanding-mysql-internals",
+  "title": "Understanding MySQL Internals",
+  "subtitle": null,
+  "authors": [
+    "Sasha Pachev"
+  ],
+  "year": 2009,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 256,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "mysql",
+  "tags": [
+    "performance",
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1495043,
+      "md5": "228bbc78195a2f6afaea4e84f87366e5"
+    }
+  ]
+}

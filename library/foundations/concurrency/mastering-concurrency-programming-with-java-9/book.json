@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mastering-concurrency-programming-with-java-9",
+  "title": "Mastering Concurrency Programming with Java 9",
+  "subtitle": null,
+  "authors": [
+    "Javier Fernandez Gonzalez"
+  ],
+  "year": 2020,
+  "edition": null,
+  "publisher": "Packt",
+  "pages": 507,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "concurrency",
+  "tags": [
+    "concurrency"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 4529289,
+      "md5": "04ab25ffc82cb9f9fd8774b229b7cc05"
+    }
+  ]
+}

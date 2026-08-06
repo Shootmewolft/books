@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "network-warrior",
+  "title": "Network Warrior",
+  "subtitle": null,
+  "authors": [
+    "Gary A. Donahue"
+  ],
+  "year": 2011,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 785,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 28000064,
+      "md5": "67a13e5fc55eda1bf35f9f896b2d298a"
+    }
+  ]
+}

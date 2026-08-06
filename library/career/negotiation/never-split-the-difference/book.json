@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "never-split-the-difference",
+  "title": "Never Split the Difference",
+  "subtitle": "Negotiating As If Your Life Depended On It",
+  "authors": [
+    "Chris Voss",
+    "Tahl Raz"
+  ],
+  "year": 2016,
+  "edition": null,
+  "publisher": "HarperBusiness",
+  "pages": 375,
+  "kind": "book",
+  "category": "career",
+  "subcategory": "negotiation",
+  "tags": [
+    "negotiation"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 810884,
+      "md5": "8de0bbc4554d517c82dce0f7599e902d"
+    },
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1383132,
+      "md5": "3c4bb0d07d82869f893fb25eafeef807"
+    }
+  ]
+}

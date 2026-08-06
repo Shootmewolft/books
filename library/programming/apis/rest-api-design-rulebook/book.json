@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "rest-api-design-rulebook",
+  "title": "REST API Design Rulebook",
+  "subtitle": null,
+  "authors": [
+    "Mark Masse"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 114,
+  "kind": "guide",
+  "category": "programming",
+  "subcategory": "apis",
+  "tags": [
+    "api",
+    "rest",
+    "system-design"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5246930,
+      "md5": "4bc6e7afe80cc98a5e0b112ef3f349f8"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "computer-networking-7e",
+  "title": "Computer Networking",
+  "subtitle": "A Top-Down Approach",
+  "authors": [
+    "James F. Kurose"
+  ],
+  "year": 2020,
+  "edition": 7,
+  "publisher": "Pearson",
+  "pages": 221,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "networking",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3642595,
+      "md5": "e40e6918dc60c6914fed9b2a94b38dec"
+    }
+  ]
+}

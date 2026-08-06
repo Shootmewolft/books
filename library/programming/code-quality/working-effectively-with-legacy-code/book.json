@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "working-effectively-with-legacy-code",
+  "title": "Working effectively with legacy code",
+  "subtitle": null,
+  "authors": [
+    "Feathers",
+    "Michael C"
+  ],
+  "year": 2013,
+  "edition": null,
+  "publisher": "Prentice Hall PTR",
+  "pages": 457,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "code-quality",
+  "tags": [
+    "legacy-code",
+    "refactoring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2088508,
+      "md5": "2c3232c7e7bbc3c19011dd22ad42a873"
+    }
+  ]
+}

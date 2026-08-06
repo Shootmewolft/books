@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-devops-handbook",
+  "title": "The DevOps Handbook",
+  "subtitle": "How to Create World-Class Agility, Reliability, & Security in Technology Organizations-Gene Kim, Jez Humble, Patrick Debois, John Willis, Nicole Forsgren",
+  "authors": [
+    "Gene Kim",
+    "Jez Humble",
+    "Patrick Debois",
+    "John Willis"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 747,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "devops",
+  "tags": [
+    "devops",
+    "management",
+    "reliability"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 12073794,
+      "md5": "daede1939278402ff47c3915d04ac563"
+    }
+  ]
+}

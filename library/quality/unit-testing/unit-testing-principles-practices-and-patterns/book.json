@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "unit-testing-principles-practices-and-patterns",
+  "title": "Unit Testing Principles, Practices, and Patterns",
+  "subtitle": null,
+  "authors": [
+    "Vladimir Khorikov"
+  ],
+  "year": 2019,
+  "edition": null,
+  "publisher": "Manning Publications",
+  "pages": 305,
+  "kind": "book",
+  "category": "quality",
+  "subcategory": "unit-testing",
+  "tags": [
+    "tdd",
+    "testing"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3084581,
+      "md5": "25329bce8f94e3bc57b1f07cb65734d3"
+    }
+  ]
+}

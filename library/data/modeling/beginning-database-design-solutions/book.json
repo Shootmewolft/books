@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "beginning-database-design-solutions",
+  "title": "Beginning Database Design Solutions",
+  "subtitle": null,
+  "authors": [
+    "Rod Stephens"
+  ],
+  "year": 2009,
+  "edition": 1,
+  "publisher": "Wiley",
+  "pages": 552,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "modeling",
+  "tags": [
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6602580,
+      "md5": "d593e0a17dbe847abfdc020b406bb746"
+    }
+  ]
+}

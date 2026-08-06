@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "stratospheric-from-zero-to-production-with-spring-boot-and-aws",
+  "title": "Stratospheric From Zero to Production with Spring Boot and AWS",
+  "subtitle": null,
+  "authors": [
+    "Tom Hombergs",
+    "Björn Wilmsmann",
+    "Philip Riecks"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "leanpub.com",
+  "pages": 452,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "spring",
+  "tags": [
+    "java",
+    "spring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5647776,
+      "md5": "58c1ee0385bbc5e4e2a8392ebc8d2565"
+    }
+  ]
+}

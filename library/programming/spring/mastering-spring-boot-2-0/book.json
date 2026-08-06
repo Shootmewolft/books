@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mastering-spring-boot-2-0",
+  "title": "Mastering Spring Boot 2.0",
+  "subtitle": "Build modern, cloud-native, and distributed systems using spring boot",
+  "authors": [
+    "Dinesh Rajput"
+  ],
+  "year": 2018,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 380,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "spring",
+  "tags": [
+    "java",
+    "spring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 8288475,
+      "md5": "244ebdb13e12ffb1b88727c4a726f51c"
+    }
+  ]
+}

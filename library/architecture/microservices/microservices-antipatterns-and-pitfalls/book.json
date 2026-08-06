@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "microservices-antipatterns-and-pitfalls",
+  "title": "Microservices AntiPatterns and Pitfalls",
+  "subtitle": null,
+  "authors": [
+    "Mark Richards"
+  ],
+  "year": 2016,
+  "edition": null,
+  "publisher": "O'Reilly",
+  "pages": 66,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "microservices",
+  "tags": [
+    "microservices"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5007951,
+      "md5": "48e210104b333595ae9888ee4f4a702c"
+    }
+  ]
+}

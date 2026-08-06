@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "code-simplicity",
+  "title": "Code Simplicity",
+  "subtitle": "The Fundamentals of Software",
+  "authors": [
+    "Max Kanat-Alexander"
+  ],
+  "year": 2012,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 80,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "code-quality",
+  "tags": [
+    "refactoring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 658981,
+      "md5": "c91d812c4a5a7549644434185388ac7e"
+    }
+  ]
+}

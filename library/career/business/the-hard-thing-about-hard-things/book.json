@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-hard-thing-about-hard-things",
+  "title": "The Hard Thing About Hard Things",
+  "subtitle": "Building a Business When There Are No Easy Answers",
+  "authors": [
+    "Ben Horowitz"
+  ],
+  "year": 2014,
+  "edition": null,
+  "publisher": null,
+  "pages": 244,
+  "kind": "book",
+  "category": "career",
+  "subcategory": "business",
+  "tags": [
+    "leadership",
+    "management"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1058115,
+      "md5": "3b2bcd8826bdba0f8f24d72b6b7ada93"
+    }
+  ]
+}

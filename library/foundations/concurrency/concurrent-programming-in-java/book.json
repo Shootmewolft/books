@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "concurrent-programming-in-java",
+  "title": "Concurrent Programming in Java",
+  "subtitle": "Design Principles and Patterns",
+  "authors": [
+    "Doug Lea"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 216,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "concurrency",
+  "tags": [
+    "concurrency",
+    "java",
+    "jvm"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 620348,
+      "md5": "df5b7166f98e7be08bd2ebf718fa2e56"
+    }
+  ]
+}

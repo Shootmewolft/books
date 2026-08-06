@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "mockito-for-spring",
+  "title": "Mockito for Spring",
+  "subtitle": "learn all you need to know about the Spring Framework and how to unit test your projects with Mockito",
+  "authors": [
+    "Sujoy Acharya"
+  ],
+  "year": 2015,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 178,
+  "kind": "book",
+  "category": "quality",
+  "subcategory": "unit-testing",
+  "tags": [
+    "tdd",
+    "testing"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1479604,
+      "md5": "07913ab1c3ece2a9abcf7506153eb152"
+    }
+  ]
+}

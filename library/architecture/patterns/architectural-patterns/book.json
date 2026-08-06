@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "architectural-patterns",
+  "title": "Architectural Patterns",
+  "subtitle": "Uncover essential patterns in the most indispensable realm of enterprise architecture",
+  "authors": [
+    "Pethuru Raj",
+    "Anupama Raman",
+    "Harihara Subramanian"
+  ],
+  "year": 2017,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 458,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "patterns",
+  "tags": [
+    "design-patterns"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 8766041,
+      "md5": "f72e8a573aad3258f48d4ec888e03ec8"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "elasticsearch-blueprints",
+  "title": "Elasticsearch Blueprints",
+  "subtitle": "A practical project-based guide to generating compelling search solutions using the dynamic and powerful features of Elasticsearch",
+  "authors": [
+    "Vineeth Mohan"
+  ],
+  "year": 2015,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 192,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "elasticsearch",
+  "tags": [
+    "indexing",
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 7968498,
+      "md5": "fa4dae6fbe72fd4604ceb8f066bbb0b1"
+    }
+  ]
+}

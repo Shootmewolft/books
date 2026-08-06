@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "learning-spring-boot-3-0-3e",
+  "title": "Learning Spring Boot 3.0",
+  "subtitle": "Simplify the development of production-grade applications using Java and Spring",
+  "authors": [
+    "Greg L. Turnquist"
+  ],
+  "year": 2022,
+  "edition": 3,
+  "publisher": "Packt Publishing",
+  "pages": 271,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "spring",
+  "tags": [
+    "java",
+    "spring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 4574859,
+      "md5": "9953e1f476f1ce364cc84f0eac717ee0"
+    }
+  ]
+}

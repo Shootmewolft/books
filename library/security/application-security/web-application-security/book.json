@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "web-application-security",
+  "title": "Web Application Security",
+  "subtitle": null,
+  "authors": [
+    "Andrew Hoffman"
+  ],
+  "year": 2020,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 331,
+  "kind": "book",
+  "category": "security",
+  "subcategory": "application-security",
+  "tags": [
+    "security",
+    "web-security"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "epub",
+      "path": "en.epub",
+      "bytes": 15660246,
+      "md5": "d848cd8bab0ba48ff566df43bf3bb190"
+    },
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 4794033,
+      "md5": "146ee8e1669dd5f03a2fc27ee3369e52"
+    }
+  ]
+}

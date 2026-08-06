@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "algorithms-unlocked",
+  "title": "Algorithms Unlocked",
+  "subtitle": null,
+  "authors": [
+    "Thomas H. Cormen"
+  ],
+  "year": 2013,
+  "edition": null,
+  "publisher": "The MIT Press",
+  "pages": 237,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "algorithms",
+  "tags": [
+    "algorithms"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2619364,
+      "md5": "ded655a8c87eda65c81f064aade1f901"
+    }
+  ]
+}

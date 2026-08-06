@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "high-availability-mysql-cookbook",
+  "title": "High Availability MySQL Cookbook",
+  "subtitle": null,
+  "authors": [
+    "Alex Davies"
+  ],
+  "year": 2010,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 276,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "mysql",
+  "tags": [
+    "reliability",
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3377463,
+      "md5": "c951250e125759ab329dbc7bc6835d32"
+    }
+  ]
+}

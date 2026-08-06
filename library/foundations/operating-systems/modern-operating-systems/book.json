@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "modern-operating-systems",
+  "title": "Modern Operating Systems",
+  "subtitle": null,
+  "authors": [
+    "Andrew S. Tanenbaum",
+    "Herbert Bos"
+  ],
+  "year": 2023,
+  "edition": null,
+  "publisher": "Pearson",
+  "pages": 1185,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 8966030,
+      "md5": "a75db603342da398d61868404be3f176"
+    }
+  ]
+}

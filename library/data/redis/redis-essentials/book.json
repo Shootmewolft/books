@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "redis-essentials",
+  "title": "Redis Essentials",
+  "subtitle": "Harness the power of Redis to integrate and manage your projects efficiently",
+  "authors": [
+    "Maxwell Dayvson Da Silva",
+    "Hugo Lopes Tavares"
+  ],
+  "year": 2015,
+  "edition": null,
+  "publisher": "Packt Publishing",
+  "pages": 230,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "redis",
+  "tags": [
+    "caching",
+    "nosql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 13648758,
+      "md5": "26c5168c7542a566efe54ee0e813d1b0"
+    }
+  ]
+}

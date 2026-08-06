@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "strengthsfinder-2-0",
+  "title": "StrengthsFinder 2.0",
+  "subtitle": null,
+  "authors": [
+    "Tom Rath"
+  ],
+  "year": 2007,
+  "edition": null,
+  "publisher": null,
+  "pages": 170,
+  "kind": "book",
+  "category": "career",
+  "subcategory": "self-development",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1519099,
+      "md5": "37d2a80b213cf78bacd1eebe98b2c0ac"
+    }
+  ]
+}

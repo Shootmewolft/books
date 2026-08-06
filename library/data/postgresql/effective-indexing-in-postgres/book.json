@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "effective-indexing-in-postgres",
+  "title": "Effective Indexing in Postgres",
+  "subtitle": null,
+  "authors": [],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 29,
+  "kind": "guide",
+  "category": "data",
+  "subcategory": "postgresql",
+  "tags": [
+    "indexing",
+    "performance",
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2035624,
+      "md5": "29c8c7cb674a318acf900d410991157e"
+    }
+  ]
+}

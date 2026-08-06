@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "the-pragmatic-programmer",
+  "title": "The Pragmatic Programmer",
+  "subtitle": "From Journeyman to Master",
+  "authors": [
+    "Andrew Hunt",
+    "David Thomas"
+  ],
+  "year": 1999,
+  "edition": 1,
+  "publisher": "Addison-Wesley",
+  "pages": 324,
+  "kind": "book",
+  "category": "craft",
+  "subcategory": "engineering-practice",
+  "tags": [],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 1530300,
+      "md5": "2912e4f48f0e7625a80b38fb9983ec69"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "domain-driven-design",
+  "title": "Domain-driven design",
+  "subtitle": "tackling complexity in the heart of software",
+  "authors": [
+    "Evans",
+    "Eric"
+  ],
+  "year": 2014,
+  "edition": null,
+  "publisher": "Addison-Wesley",
+  "pages": 563,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "domain-driven-design",
+  "tags": [
+    "ddd"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3781791,
+      "md5": "04d80385c9e9bccd2e076a183b003766"
+    }
+  ]
+}

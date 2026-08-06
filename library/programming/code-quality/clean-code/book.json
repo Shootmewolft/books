@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "clean-code",
+  "title": "Clean Code",
+  "subtitle": "A Handbook of Agile Software Craftsmanship",
+  "authors": [
+    "Robert C. Martin"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 462,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "code-quality",
+  "tags": [
+    "refactoring"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 3072779,
+      "md5": "838cc6ac8cb0d8ddb98fdb1ae0c8a443"
+    }
+  ]
+}

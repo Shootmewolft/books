@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "operating-systems-principles-and-practice-2e",
+  "title": "Operating Systems: Principles and Practice",
+  "subtitle": null,
+  "authors": [
+    "Thomas Anderson",
+    "Michael Dahlin"
+  ],
+  "year": 2015,
+  "edition": 2,
+  "publisher": null,
+  "pages": 168,
+  "kind": "book",
+  "category": "foundations",
+  "subcategory": "operating-systems",
+  "tags": [
+    "unix"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 2666148,
+      "md5": "34989dc0ad36a4b81507695629676785"
+    }
+  ]
+}

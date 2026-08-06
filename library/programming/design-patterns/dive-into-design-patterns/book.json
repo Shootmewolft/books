@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "dive-into-design-patterns",
+  "title": "Dive Into Design Patterns",
+  "subtitle": null,
+  "authors": [
+    "Alexander Shvets"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 410,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "design-patterns",
+  "tags": [
+    "design-patterns",
+    "oop"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 29661227,
+      "md5": "3db872cc06b0d94fe6fee619d749baf8"
+    }
+  ]
+}

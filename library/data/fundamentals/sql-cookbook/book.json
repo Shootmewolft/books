@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "sql-cookbook",
+  "title": "SQL Cookbook",
+  "subtitle": "Query Solutions and Techniques for All SQL Users",
+  "authors": [
+    "Anthony Molinaro",
+    "Robert de Graaf"
+  ],
+  "year": 2021,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 572,
+  "kind": "book",
+  "category": "data",
+  "subcategory": "fundamentals",
+  "tags": [
+    "sql"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 13036634,
+      "md5": "b2f314a33f3b010c074e6af4f5c4e89a"
+    }
+  ]
+}

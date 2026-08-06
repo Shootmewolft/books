@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "impractical-python-projects",
+  "title": "Impractical Python Projects",
+  "subtitle": "Playful Programming Activities to Make You Smarter-No Starch Press -Lee Vaughan",
+  "authors": [
+    "Vaughan",
+    "Lee;"
+  ],
+  "year": 2019,
+  "edition": null,
+  "publisher": "No Starch Press",
+  "pages": 428,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "python",
+  "tags": [
+    "python"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 9660560,
+      "md5": "c780e3b6ebbefa2655df886ed5298acf"
+    }
+  ]
+}

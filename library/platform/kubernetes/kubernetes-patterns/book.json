@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "kubernetes-patterns",
+  "title": "Kubernetes Patterns",
+  "subtitle": "Reusable Elements for Designing Cloud Native Applications",
+  "authors": [
+    "Bilgin Ibryam",
+    "Roland Huss"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "O'Reilly Media",
+  "pages": 393,
+  "kind": "book",
+  "category": "platform",
+  "subcategory": "kubernetes",
+  "tags": [
+    "cloud-native",
+    "kubernetes"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 6106144,
+      "md5": "eac4d57224aa7fd9a7cc08afd8698b78"
+    }
+  ]
+}

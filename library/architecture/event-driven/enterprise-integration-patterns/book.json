@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "enterprise-integration-patterns",
+  "title": "Enterprise Integration Patterns",
+  "subtitle": "Designing, Building, and Deploying Messaging Solutions",
+  "authors": [
+    "Gregor Hohpe",
+    "Bobby Woolf"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": "Addison-Wesley Professional",
+  "pages": 574,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "event-driven",
+  "tags": [
+    "design-patterns",
+    "event-driven",
+    "messaging"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 13261343,
+      "md5": "6d5291477c82f315e618b63a562285a6"
+    }
+  ]
+}

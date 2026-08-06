@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "software-architecture-patterns",
+  "title": "Software Architecture Patterns",
+  "subtitle": null,
+  "authors": [
+    "Mark Richards"
+  ],
+  "year": 2015,
+  "edition": null,
+  "publisher": "O'Reilly",
+  "pages": 55,
+  "kind": "guide",
+  "category": "architecture",
+  "subcategory": "patterns",
+  "tags": [
+    "design-patterns"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 5532082,
+      "md5": "d4f24faeff960b9652e9fd6c880bd300"
+    }
+  ]
+}

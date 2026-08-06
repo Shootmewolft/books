@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "agile-principles-patterns-and-practices-in-c",
+  "title": "Agile Principles, Patterns, and Practices in C#",
+  "subtitle": null,
+  "authors": [
+    "Robert C. Martin",
+    "Micah Martin"
+  ],
+  "year": null,
+  "edition": null,
+  "publisher": null,
+  "pages": 944,
+  "kind": "book",
+  "category": "programming",
+  "subcategory": "design-patterns",
+  "tags": [
+    "design-patterns",
+    "oop"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 13594880,
+      "md5": "5084fed39da0be05c48e0fe06d9b82b5"
+    }
+  ]
+}

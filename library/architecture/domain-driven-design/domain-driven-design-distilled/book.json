@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schema/book.schema.json",
+  "slug": "domain-driven-design-distilled",
+  "title": "Domain-Driven Design Distilled",
+  "subtitle": null,
+  "authors": [
+    "Vaughn Vernon"
+  ],
+  "year": 2016,
+  "edition": null,
+  "publisher": "Addison-Wesley Professional",
+  "pages": 137,
+  "kind": "book",
+  "category": "architecture",
+  "subcategory": "domain-driven-design",
+  "tags": [
+    "ddd"
+  ],
+  "files": [
+    {
+      "lang": "en",
+      "format": "pdf",
+      "path": "en.pdf",
+      "bytes": 11091241,
+      "md5": "d4a07000a571af0452808edaeb928c9c"
+    }
+  ]
+}
