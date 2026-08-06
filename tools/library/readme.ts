@@ -11,7 +11,7 @@ const ROOT = process.cwd();
 const LIBRARY = join(ROOT, 'library');
 const GITHUB_USER = 'shootmewolft';
 const REPO = 'books';
-const SITE_NAME = 'La Biblioteca del Software';
+const SITE_NAME = 'Library';
 
 function repoLink(directory: string): string {
   return relative(ROOT, directory).split('/').map(encodeURIComponent).join('/');

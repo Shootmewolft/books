@@ -1,1 +1,1 @@
-export const SITE_NAME = 'La Biblioteca del Software';
+export const SITE_NAME = 'Library';

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📚 La Biblioteca del Software
+# 📚 Library
 
 **A curated collection of software engineering books, with a reader built in.**
 

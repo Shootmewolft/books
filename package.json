@@ -1,9 +1,9 @@
 {
-  "name": "la-biblioteca-del-software",
+  "name": "library",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "La Biblioteca del Software — a curated library of software engineering books with a built-in reader.",
+  "description": "Library — a curated library of software engineering books with a built-in reader.",
   "author": "Shoot (https://github.com/shootmewolft)",
   "license": "MIT",
   "packageManager": "pnpm@11.3.0",
