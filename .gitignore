@@ -1,0 +1,48 @@
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Dependencies ---
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+
+# --- Next.js ---
+.next/
+out/
+next-env.d.ts
+.vercel/
+
+# --- Build output ---
+dist/
+build/
+*.tsbuildinfo
+
+# --- Environment ---
+.env
+.env.*
+!.env.example
+
+# --- Generated library artefacts ---
+# inventory.json is derived from the library tree; regenerate with
+#   pnpm library:inventory
+tools/library/inventory.json
+tools/library/migration-plan.json
+
+# --- Editor / tooling caches ---
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+.atl/
+.claude/
+
+# --- Logs ---
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Not a book. Excluded deliberately — see CONTRIBUTING.md
+*.torrent

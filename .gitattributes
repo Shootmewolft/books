@@ -1,0 +1,27 @@
+# Books are binary. Never attempt line-ending conversion or textual diffs on
+# them — it corrupts the file and produces useless multi-megabyte diffs.
+*.pdf  binary
+*.epub binary
+*.mobi binary
+*.djvu binary
+
+# Cover images
+*.webp binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+
+# Normalise line endings for everything textual, regardless of contributor OS.
+* text=auto eol=lf
+
+*.mjs  text eol=lf
+*.js   text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Keep generated/vendored files out of language statistics and diff noise.
+pnpm-lock.yaml -diff linguist-generated
