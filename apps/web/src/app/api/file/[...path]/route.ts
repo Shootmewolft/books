@@ -2,6 +2,7 @@ import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { Readable } from 'node:stream';
 import type { NextRequest } from 'next/server';
+import { IS_SERVERLESS } from '@/constants/is-serverless';
 import { LIBRARY_CDN_URL } from '@/constants/library-cdn';
 import { buildCdnUrl } from '@/modules/library-files/domain/build-cdn-url';
 import { resolveInLibrary } from '@/server/library-path/resolve-in-library';
@@ -67,6 +68,15 @@ export async function GET(
 
   if (LIBRARY_CDN_URL !== null) {
     return Response.redirect(buildCdnUrl(LIBRARY_CDN_URL, segments), 308);
+  }
+
+  if (IS_SERVERLESS) {
+    return new Response(
+      'LIBRARY_CDN_URL is not set. Book files are not bundled into the deployment, ' +
+        'so this route can only serve them by redirecting to object storage. ' +
+        'Set LIBRARY_CDN_URL to the public bucket URL in the project environment variables.',
+      { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } },
+    );
   }
 
   let absolutePath: string;
