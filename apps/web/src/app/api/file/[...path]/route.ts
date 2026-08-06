@@ -2,6 +2,8 @@ import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { Readable } from 'node:stream';
 import type { NextRequest } from 'next/server';
+import { LIBRARY_CDN_URL } from '@/constants/library-cdn';
+import { buildCdnUrl } from '@/modules/library-files/domain/build-cdn-url';
 import { resolveInLibrary } from '@/server/library-path/resolve-in-library';
 
 const ONE_YEAR_IMMUTABLE = 'public, max-age=31536000, immutable';
@@ -56,6 +58,14 @@ export async function GET(
   context: { params: Promise<{ path: string[] }> },
 ): Promise<Response> {
   const { path: segments } = await context.params;
+
+  if (segments.some((segment) => segment === '..' || segment.includes('/'))) {
+    return new Response('Forbidden', { status: 403 });
+  }
+
+  if (LIBRARY_CDN_URL !== null) {
+    return Response.redirect(buildCdnUrl(LIBRARY_CDN_URL, segments), 308);
+  }
 
   let absolutePath: string;
   try {

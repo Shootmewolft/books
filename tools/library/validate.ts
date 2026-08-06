@@ -17,6 +17,8 @@ const WARN_FILE_BYTES = 50 * 1024 * 1024;
 const KINDS: readonly Kind[] = ['book', 'guide', 'reference'];
 const REQUIRED_FIELDS = ['title', 'kind', 'category', 'subcategory'] as const;
 
+const SKIP_BINARIES = process.argv.includes('--no-binaries');
+
 const errors: Finding[] = [];
 const warnings: Finding[] = [];
 
@@ -119,6 +121,23 @@ async function validateBook(
     if (seenVariants.has(variant)) error(where, `duplicate ${variant} variant`);
     seenVariants.add(variant);
 
+    if (file.bytes > MAX_FILE_BYTES) {
+      error(where, `${toMegabytes(file.bytes)} MB exceeds GitHub's 100 MB hard limit`);
+    } else if (file.bytes > WARN_FILE_BYTES) {
+      warn(where, `${toMegabytes(file.bytes)} MB — above GitHub's 50 MB warning threshold`);
+    }
+
+    if (file.md5 !== undefined) {
+      const previous = seenHashes.get(file.md5);
+      if (previous !== undefined && previous !== where) {
+        error(where, `identical content already declared at ${previous}`);
+      } else {
+        seenHashes.set(file.md5, where);
+      }
+    }
+
+    if (SKIP_BINARIES) continue;
+
     const absolute = join(directory, file.path);
     let size: number;
     try {
@@ -132,31 +151,21 @@ async function validateBook(
     if (size !== file.bytes) {
       error(where, `size mismatch: book.json says ${file.bytes}, file is ${size}`);
     }
-    if (size > MAX_FILE_BYTES) {
-      error(where, `${toMegabytes(size)} MB exceeds GitHub's 100 MB hard limit`);
-    } else if (size > WARN_FILE_BYTES) {
-      warn(where, `${toMegabytes(size)} MB — above GitHub's 50 MB warning threshold`);
-    }
 
     if (file.md5 !== undefined) {
       const actual = await hashFile(absolute);
       if (actual !== file.md5) {
         error(where, `md5 mismatch: book.json says ${file.md5}, file hashes to ${actual}`);
       }
-
-      const previous = seenHashes.get(actual);
-      if (previous !== undefined && previous !== where) {
-        error(where, `identical content already exists at ${previous}`);
-      } else {
-        seenHashes.set(actual, where);
-      }
     }
   }
 
-  const declared = new Set(['book.json', 'cover.webp', ...book.files.map((file) => file.path)]);
-  for (const entry of await readdir(directory)) {
-    if (!declared.has(entry)) {
-      warn(`${relativeDirectory}/${entry}`, 'present on disk but not declared in book.json');
+  if (!SKIP_BINARIES) {
+    const declared = new Set(['book.json', 'cover.webp', ...book.files.map((file) => file.path)]);
+    for (const entry of await readdir(directory)) {
+      if (!declared.has(entry)) {
+        warn(`${relativeDirectory}/${entry}`, 'present on disk but not declared in book.json');
+      }
     }
   }
 
@@ -180,14 +189,16 @@ async function main(): Promise<void> {
     }
   }
 
-  for (const orphan of await findOrphanFiles(LIBRARY)) {
+  const orphans = SKIP_BINARIES ? [] : await findOrphanFiles(LIBRARY);
+  for (const orphan of orphans) {
     error(
       `library/${orphan}`,
       'book file is not declared by any book.json — run: pnpm library:add',
     );
   }
 
-  console.info(`Validated ${directories.length} books.`);
+  const mode = SKIP_BINARIES ? ' (metadata only — binaries not checked)' : '';
+  console.info(`Validated ${directories.length} books${mode}.`);
 
   if (warnings.length > 0) {
     console.info(`\n${warnings.length} warning(s):`);

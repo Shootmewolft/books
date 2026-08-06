@@ -40,3 +40,13 @@ pnpm-debug.log*
 
 # Not a book. Excluded deliberately — see CONTRIBUTING.md
 *.torrent
+
+# --- Library binaries ---
+# The books live in Cloudflare R2, not in git. A 1.5 GB repository broke the
+# Vercel build container (ENOSPC) and the files could never be served from a
+# serverless function anyway. Only the metadata is versioned.
+# Upload with: pnpm library:upload
+library/**/*.pdf
+library/**/*.epub
+library/**/cover.webp
+library/**/cover.jpg

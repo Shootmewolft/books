@@ -59,7 +59,7 @@ jobs:
       # Schema, taxonomy, slug/edition rules, file existence, size limits, and
       # cross-library md5 duplicate detection.
       - name: Validate every book
-        run: pnpm library:validate
+        run: node tools/library/validate.ts --no-binaries
 
       # The catalogue in README.md is generated. If it drifts from the library,
       # the README starts lying — which is exactly how the previous one ended up
