@@ -11,16 +11,16 @@ interface HighlightLayerProps {
 
 export function HighlightLayer({ highlights, onRemove, removeLabel }: HighlightLayerProps) {
   return (
-    <div className="pointer-events-none absolute inset-0 z-[1]">
+    <div className="pointer-events-none absolute inset-0 z-1">
       {highlights.map((highlight) =>
-        highlight.rects.map((rect, index) => (
+        highlight.rects.map((rect) => (
           <button
-            key={`${highlight.id}-${index}`}
+            key={`${highlight.id}:${rect.x},${rect.y}`}
             type="button"
             onClick={() => onRemove(highlight.id)}
             title={`${removeLabel}: ${highlight.text.slice(0, 60)}`}
             aria-label={`${removeLabel}: ${highlight.text.slice(0, 60)}`}
-            className="pointer-events-auto absolute cursor-pointer rounded-[2px] mix-blend-multiply transition-opacity hover:opacity-90"
+            className="pointer-events-auto absolute cursor-pointer rounded-xs mix-blend-multiply transition-opacity hover:opacity-90"
             style={{
               left: `${rect.x * 100}%`,
               top: `${rect.y * 100}%`,

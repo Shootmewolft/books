@@ -40,7 +40,7 @@ export function ReaderPane({
   const [filePath, setFilePath] = useState(initialFilePath);
   const [scale, setScale] = useState(DEFAULT_ZOOM);
 
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLElement>(null);
   const { document: pdf, pageCount, status } = usePdfDocument(fileUrl(`${book.path}/${filePath}`));
   const { highlights, addHighlight, removeHighlight } = useHighlights(book.path, filePath);
   const { selection, clear } = useTextSelection(scrollRef);
@@ -88,8 +88,8 @@ export function ReaderPane({
 
   return (
     <section
+      aria-label={book.title}
       onFocusCapture={onFocus}
-      onMouseDown={onFocus}
       className={`flex min-h-0 flex-1 flex-col overflow-hidden rounded-card border bg-void transition-colors ${
         isFocused ? 'border-brass-dim' : 'border-edge'
       }`}
@@ -110,7 +110,13 @@ export function ReaderPane({
         {...(onClose === undefined ? {} : { onClose })}
       />
 
-      <div ref={scrollRef} className="min-h-0 flex-1 overflow-auto bg-deep p-4">
+      <section
+        ref={scrollRef}
+        // biome-ignore lint/a11y/noNoninteractiveTabindex: WCAG 2.1.1 — a scrollable region must be reachable by keyboard, otherwise the page cannot be scrolled without a pointer
+        tabIndex={0}
+        aria-label={messages.reader.title}
+        className="min-h-0 flex-1 overflow-auto bg-deep p-4 focus-visible:outline-none"
+      >
         {status === 'loading' && (
           <p className="py-16 text-center text-paper-faint text-small">{messages.reader.loading}</p>
         )}
@@ -139,7 +145,7 @@ export function ReaderPane({
             removeLabel={messages.reader.removeHighlight}
           />
         )}
-      </div>
+      </section>
 
       {selection !== null && (
         <HighlightPicker

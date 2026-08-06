@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { BookGrid } from '@/components/book-grid';
-import { CatalogueFilters } from '@/components/catalogue-filters';
+import { CatalogueFilterBar } from '@/components/catalogue-filter-bar';
 import { EmptyState } from '@/components/empty-state';
 import { SearchField } from '@/components/search-field';
 import type { Locale } from '@/i18n/config';
@@ -43,7 +43,7 @@ export async function CatalogueResults({ searchParams, locale }: CatalogueResult
       </div>
 
       <div className="mb-12 border-edge border-y py-6">
-        <CatalogueFilters
+        <CatalogueFilterBar
           basePath={basePath}
           filters={filters}
           categories={categories}

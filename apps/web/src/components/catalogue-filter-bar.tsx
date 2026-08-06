@@ -9,7 +9,7 @@ import { localise } from '@/utils/localise';
 const KINDS: readonly Kind[] = ['book', 'guide', 'reference'];
 const MAX_VISIBLE_TAGS = 24;
 
-interface CatalogueFiltersProps {
+interface CatalogueFilterBarProps {
   basePath: string;
   filters: CatalogueFilters;
   categories: readonly Category[];
@@ -18,14 +18,14 @@ interface CatalogueFiltersProps {
   locale: Locale;
 }
 
-export function CatalogueFilters({
+export function CatalogueFilterBar({
   basePath,
   filters,
   categories,
   tags,
   books,
   locale,
-}: CatalogueFiltersProps) {
+}: CatalogueFilterBarProps) {
   const messages = getMessages(locale);
 
   const countByCategory = new Map<string, number>();

@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/.next", "!**/node_modules", "!library", "!pnpm-lock.yaml"]
+    "includes": ["**", "!**/.next", "!**/node_modules", "!library", "!pnpm-lock.yaml", "!**/*.svg"]
   },
   "formatter": {
     "enabled": true,
