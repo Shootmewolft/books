@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "La Biblioteca del Software \u2014 a curated library of software engineering books with a built-in reader.",
+  "description": "La Biblioteca del Software — a curated library of software engineering books with a built-in reader.",
   "author": "Shoot (https://github.com/shootmewolft)",
   "license": "MIT",
   "packageManager": "pnpm@11.3.0",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1103.0",
+    "@aws-sdk/lib-storage": "^3.1103.0",
     "@biomejs/biome": "2.5.7",
     "@types/node": "26.1.2",
     "sharp": "^0.35.3",

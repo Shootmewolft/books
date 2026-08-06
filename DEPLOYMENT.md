@@ -1,72 +1,149 @@
 # Deployment
 
-The site runs on Vercel. The books do not.
+The site runs on Vercel. The books do not — they live in S3.
 
 ## Why they are separate
 
-The first deploy attempt failed with `ENOSPC`: the build container ran out of
-disk. The cause was a 1.27 GB `.git/objects` pack, because 1.5 GB of PDFs were
-committed to the repository.
+The first deploy failed with `ENOSPC`: the build container ran out of disk
+against a 1.27 GB `.git` pack, caused by committing 1.5 GB of PDFs.
 
-Disk was not the only problem. The build output contained **zero PDFs** — Next
-does not bundle files it is not importing. Even with enough disk, the deploy
-would have gone out broken: the catalogue and all 302 book pages would render
-(that data is baked in at build time), but every cover, every download and the
-reader itself would have returned 404, because `/api/file/*` reads from a
-`library/` directory that does not exist inside a serverless function.
+Disk was not the real problem. The build output contained **zero PDFs** — Next
+does not bundle files nothing imports. Even with enough disk the deploy would
+have shipped broken: the catalogue and all 302 book pages render fine because
+that data is baked in at build time, but every cover, every download and the
+reader itself would return 404, because `/api/file/*` reads a `library/`
+directory that does not exist inside a serverless function.
 
-So the books live in Cloudflare R2 and the repository keeps only metadata.
+---
 
-R2 rather than S3 or Vercel Blob for one reason: **egress is free**. A library
-of 1.5 GB that people actually download would cost real money on the others.
+## Cost, stated plainly
+
+S3 charges for egress: roughly **$0.09 per GB** transferred out. Storing 1.5 GB
+costs about $0.035/month, which is nothing. The transfer is the variable.
+
+| Scenario | Rough monthly egress cost |
+|---|---|
+| Personal use, a few reads | under $0.10 |
+| 100 downloads of a 10 MB book | ~$0.09 |
+| 1000 book downloads averaging 10 MB | ~$0.90 |
+| A post that gets traction, 100 GB | ~$9 |
+
+Putting **CloudFront in front of S3 is worth it**, and not only for cost:
+CloudFront's free tier covers 1 TB/month of egress, caches at the edge so
+repeat reads never touch S3, and gives far better latency for a PDF reader
+issuing many range requests. Direct S3 access works, but every byte is billed
+and served from a single region.
 
 ---
 
 ## One-time setup
 
-### 1. Create the R2 bucket
+### 1. Make the bucket readable
 
-In the Cloudflare dashboard: **R2 → Create bucket**, named `library`.
+The reader fetches files straight from the bucket URL, so the objects must be
+publicly readable.
 
-Then **Settings → Public access**, and either enable the `r2.dev` subdomain or
-connect a custom domain such as `books.your-domain.com`. A custom domain is
-better: `r2.dev` is rate-limited and not meant for production.
+**S3 → your bucket → Permissions**:
 
-### 2. Create an API token
+- Turn off *Block all public access*
+- Add this bucket policy, replacing `YOUR-BUCKET`:
 
-**R2 → Manage API Tokens → Create token**, with *Object Read & Write* scoped to
-the `library` bucket. Copy the values into `.env`:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadForLibrary",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::YOUR-BUCKET/*"
+    }
+  ]
+}
+```
+
+Also add a CORS rule, or the PDF reader cannot issue range requests
+cross-origin:
+
+```json
+[
+  {
+    "AllowedOrigins": ["https://your-domain.com", "http://localhost:3000"],
+    "AllowedMethods": ["GET", "HEAD"],
+    "AllowedHeaders": ["Range", "Content-Type"],
+    "ExposeHeaders": ["Content-Length", "Content-Range", "Accept-Ranges"],
+    "MaxAgeSeconds": 3000
+  }
+]
+```
+
+`ExposeHeaders` matters. Without `Content-Range` and `Accept-Ranges` visible to
+the browser, pdf.js falls back to downloading the whole file.
+
+### 2. Create an IAM user for uploads
+
+An access key scoped to this bucket only. Minimum policy:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:PutObject", "s3:GetObject", "s3:HeadObject", "s3:ListBucket"],
+      "Resource": [
+        "arn:aws:s3:::YOUR-BUCKET",
+        "arn:aws:s3:::YOUR-BUCKET/*"
+      ]
+    }
+  ]
+}
+```
+
+### 3. Configure `.env`
 
 ```bash
 cp .env.example .env
 ```
 
+Replace the contents with:
+
 ```
-R2_ACCOUNT_ID=...
-R2_ACCESS_KEY_ID=...
-R2_SECRET_ACCESS_KEY=...
-R2_BUCKET=library
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+
+# S3 direct:  https://YOUR-BUCKET.s3.YOUR-REGION.amazonaws.com
+# CloudFront: https://books.your-domain.com
+LIBRARY_CDN_URL=
+
+AWS_REGION=
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+S3_BUCKET=
 ```
 
-### 3. Upload the library
+The `AWS_*` values are used **only** by `pnpm library:upload`, which runs from
+your machine. They never go to Vercel — the deployed site only redirects to
+public URLs and never calls the AWS API.
+
+### 4. Upload the library
 
 ```bash
 pnpm library:upload
 ```
 
-Roughly 1.5 GB across 158 files plus covers. The script skips objects already
-present at the same size, so it is safe to re-run after adding a book. Use
-`--force` to overwrite.
+About 1.5 GB across 158 files plus covers. Uses multipart upload for anything
+over 8 MB, and skips objects already present at the same size, so it is safe to
+re-run after adding a book. `--force` overwrites.
 
-### 4. Purge the binaries from git history
+### 5. Purge the binaries from git history
 
-`.gitignore` only stops *future* commits. The 1.27 GB is already in the history
-and every clone still pays for it, including Vercel's.
+`.gitignore` only stops *future* commits. The 1.27 GB is already in history and
+every clone still pays for it, Vercel's included.
 
-**This rewrites history and requires a force push. Back up first.**
+**This rewrites history and needs a force push. Back up first.**
 
 ```bash
-# from a copy of the repo, not your working one
 pip install git-filter-repo
 
 git filter-repo \
@@ -80,32 +157,28 @@ git remote add origin git@github.com:Shootmewolft/books.git
 git push --force origin main
 ```
 
-Expected result: the repository drops from ~1.3 GB to a few MB. The book files
-stay on your disk — `git filter-repo` only rewrites history, and they are now
-ignored.
-
 Verify before pushing:
 
 ```bash
-du -sh .git          # should be single-digit MB
-git ls-files | wc -l # 151 book.json + code, no binaries
-ls library/architecture/fundamentals/clean-architecture/  # files still there
+du -sh .git           # single-digit MB
+git ls-files | wc -l  # 151 book.json plus code, no binaries
+ls library/architecture/fundamentals/clean-architecture/   # files still on disk
 ```
 
-### 5. Configure Vercel
+`git filter-repo` only rewrites history. The book files stay in your working
+directory; they are simply no longer tracked.
+
+### 6. Configure Vercel
 
 **Project → Settings → Environment Variables**:
 
 | Variable | Value |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | `https://your-domain.com` |
-| `LIBRARY_CDN_URL` | `https://books.your-domain.com` |
+| `LIBRARY_CDN_URL` | your bucket or CloudFront URL |
 
-`LIBRARY_CDN_URL` is what flips the file route from reading disk to redirecting
-to R2. Without it a deployed build serves 404s for every file.
-
-Do **not** put the `R2_*` credentials in Vercel. They are only needed by
-`pnpm library:upload`, which runs from your machine.
+`LIBRARY_CDN_URL` is what flips the file route from reading disk to redirecting.
+Without it, a deployed build returns 404 for every file.
 
 ---
 
@@ -114,19 +187,20 @@ Do **not** put the `R2_*` credentials in Vercel. They are only needed by
 ```
 browser → /api/file/architecture/fundamentals/clean-architecture/en.pdf
         → 308 redirect
-        → https://books.your-domain.com/architecture/fundamentals/.../en.pdf
+        → https://<bucket-or-cloudfront>/architecture/fundamentals/.../en.pdf
 ```
 
 The redirect is deliberate. Proxying the bytes through the route handler would
-bill every megabyte as Vercel bandwidth; redirecting means the file goes
-straight from R2 to the reader, and R2 charges nothing for egress.
+bill every megabyte as Vercel bandwidth on top of the S3 egress. Redirecting
+means the file travels once, from the bucket to the reader.
 
-Range requests still work — the browser follows the redirect and negotiates
-ranges with R2 directly, which is what lets the reader open page 1 of a 74 MB
-PDF without fetching the rest.
+Range requests survive the redirect: the browser follows it and negotiates
+ranges with S3 directly, which is what lets the reader open page 1 of a 74 MB
+PDF without fetching the rest. This is why the CORS `ExposeHeaders` above are
+not optional.
 
-Locally, `LIBRARY_CDN_URL` is unset, so the same route streams from disk. No
-code path differs between environments beyond that one branch.
+Locally `LIBRARY_CDN_URL` is unset, so the same route streams from disk. That
+single branch is the only difference between environments.
 
 ---
 
@@ -137,18 +211,18 @@ pnpm library:add ~/Downloads/book.pdf --category data --subcategory kafka
 pnpm library:covers
 pnpm library:validate
 pnpm library:readme
-pnpm library:upload      # push the new file to R2
+pnpm library:upload
 git add library tools README.md && git commit -m "feat(library): add ..."
 git push
 ```
 
-Only the metadata reaches git. The binary goes to R2.
+Only metadata reaches git. The binary goes to S3.
 
 ---
 
 ## What CI can and cannot check
 
-With the binaries out of the repository, CI has no files to hash, so it runs:
+With the binaries out of the repository, CI has no files to hash:
 
 ```bash
 node tools/library/validate.ts --no-binaries
@@ -159,5 +233,5 @@ vocabulary, filename convention, size limits from the declared `bytes`, and
 duplicate detection across declared md5 values.
 
 No longer verifiable in CI: that a file's real bytes match its declared size
-and hash. That check still runs locally on the full `pnpm library:validate`,
-which is what you run before uploading.
+and hash. That runs locally on the full `pnpm library:validate`, which is what
+you run before uploading.
