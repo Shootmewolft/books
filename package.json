@@ -1,9 +1,9 @@
 {
-  "name": "shoot-library",
+  "name": "la-biblioteca-del-software",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "A curated, self-hosted library of software engineering books with a server-rendered reader.",
+  "description": "La Biblioteca del Software \u2014 a curated library of software engineering books with a built-in reader.",
   "author": "Shoot (https://github.com/shootmewolft)",
   "license": "MIT",
   "packageManager": "pnpm@11.3.0",

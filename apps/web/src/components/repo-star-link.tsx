@@ -1,9 +1,9 @@
 import { StarIcon } from '@/components/star-icon';
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { GITHUB_STARGAZERS_URL } from '@/lib/github/constants';
-import { getRepoStats } from '@/lib/github/get-repo-stats';
-import { formatCount } from '@/lib/utils/format-count';
+import { GITHUB_STARGAZERS_URL } from '@/modules/repository/constants/repository';
+import { getRepoStats } from '@/modules/repository/services/get-repo-stats';
+import { formatCount } from '@/utils/format-count';
 
 export async function RepoStarLink({ locale }: { locale: Locale }) {
   const stats = await getRepoStats();

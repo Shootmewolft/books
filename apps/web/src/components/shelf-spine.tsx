@@ -2,9 +2,9 @@ import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
 import type { Locale } from '@/i18n/config';
-import { estimatedWeight } from '@/lib/catalogue/estimated-weight';
-import { spineDimensions } from '@/lib/shelf/spine-dimensions';
-import type { CatalogueBook } from '@/lib/types';
+import { estimatedWeight } from '@/modules/catalogue/domain/estimated-weight';
+import { spineDimensions } from '@/modules/catalogue/domain/spine-dimensions';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 interface ShelfSpineProps {
   book: CatalogueBook;

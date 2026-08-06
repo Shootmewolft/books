@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import type { Locale } from '@/i18n/config';
-import type { Category } from '@/lib/types';
-import { localise } from '@/lib/utils/localise';
+import type { Category } from '@/modules/catalogue/types';
+import { localise } from '@/utils/localise';
 
 interface CategoryNavProps {
   categories: readonly Category[];

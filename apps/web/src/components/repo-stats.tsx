@@ -1,8 +1,8 @@
 import { StatSlot } from '@/components/stat-slot';
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { getRepoStats } from '@/lib/github/get-repo-stats';
-import { formatCount } from '@/lib/utils/format-count';
+import { getRepoStats } from '@/modules/repository/services/get-repo-stats';
+import { formatCount } from '@/utils/format-count';
 
 export async function RepoStats({ locale }: { locale: Locale }) {
   const stats = await getRepoStats();

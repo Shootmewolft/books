@@ -1,6 +1,6 @@
 import { BookCard } from '@/components/book-card';
 import type { Locale } from '@/i18n/config';
-import type { CatalogueBook } from '@/lib/types';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 interface BookGridProps {
   books: readonly CatalogueBook[];

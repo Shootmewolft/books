@@ -1,7 +1,7 @@
 import { ShelfSpine } from '@/components/shelf-spine';
 import type { Locale } from '@/i18n/config';
-import { estimatedWeight } from '@/lib/catalogue/estimated-weight';
-import type { CatalogueBook } from '@/lib/types';
+import { estimatedWeight } from '@/modules/catalogue/domain/estimated-weight';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 interface ShelfProps {
   books: readonly CatalogueBook[];

@@ -4,8 +4,8 @@ import { BookCardMeta } from '@/components/book-card-meta';
 import { BookCover } from '@/components/book-cover';
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import type { CatalogueBook } from '@/lib/types';
-import { formatAuthors } from '@/lib/utils/format-authors';
+import type { CatalogueBook } from '@/modules/catalogue/types';
+import { formatAuthors } from '@/utils/format-authors';
 
 interface BookCardProps {
   book: CatalogueBook;

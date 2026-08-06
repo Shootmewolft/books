@@ -6,8 +6,8 @@ import { PdfCanvas } from '@/components/pdf-canvas';
 import { ReaderToolbar } from '@/components/reader-toolbar';
 import { usePdfDocument } from '@/hooks/use-pdf-document';
 import type { Messages } from '@/i18n/types';
-import { fileUrl } from '@/lib/pdf/file-url';
-import type { CatalogueBook } from '@/lib/types';
+import type { CatalogueBook } from '@/modules/catalogue/types';
+import { fileUrl } from '@/modules/reader/domain/file-url';
 
 const MIN_SCALE = 0.4;
 const MAX_SCALE = 3;

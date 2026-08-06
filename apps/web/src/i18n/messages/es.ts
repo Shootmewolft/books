@@ -2,7 +2,6 @@ import type { Messages } from '../types';
 
 export const es: Messages = {
   meta: {
-    title: 'Biblioteca',
     description:
       'Una colección curada de libros de ingeniería de software, con lector incorporado.',
   },
@@ -13,7 +12,7 @@ export const es: Messages = {
     skipToContent: 'Ir al contenido',
   },
   hero: {
-    title: 'La estantería',
+    title: 'La biblioteca que necesitas',
     lead: 'Todos los libros, a escala. La altura es el número de páginas: el manual de mil páginas se ve como lo que es.',
     browse: 'Ver el catálogo',
   },
@@ -77,7 +76,8 @@ export const es: Messages = {
     loading: 'Cargando…',
     failed: 'No se pudo mostrar este archivo.',
     failedHint: 'Descárgalo en su lugar: el archivo está bien.',
-    epubNotice: 'Los archivos EPUB se descargan en lugar de abrirse en el lector.',
+    epubNotice:
+      'Los archivos EPUB se descargan en lugar de abrirse en el lector.',
   },
   footer: {
     builtBy: 'Hecho por',
@@ -94,6 +94,7 @@ export const es: Messages = {
   },
   error: {
     notFound: 'Ese libro no está aquí',
-    notFoundHint: 'Puede que se haya renombrado, o retirado a petición de un titular de derechos.',
+    notFoundHint:
+      'Puede que se haya renombrado, o retirado a petición de un titular de derechos.',
   },
 };

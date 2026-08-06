@@ -1,6 +1,6 @@
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { COPYRIGHT_URL } from '@/lib/github/constants';
+import { COPYRIGHT_URL } from '@/modules/repository/constants/repository';
 
 export function RightsNotice({ locale }: { locale: Locale }) {
   const messages = getMessages(locale);

@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import type { CatalogueBook } from '@/lib/types';
-import { formatBytes } from '@/lib/utils/format-bytes';
+import type { CatalogueBook } from '@/modules/catalogue/types';
+import { formatBytes } from '@/utils/format-bytes';
 
 export function BookFileActions({ book, locale }: { book: CatalogueBook; locale: Locale }) {
   const messages = getMessages(locale);

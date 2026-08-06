@@ -1,7 +1,7 @@
 import type { Locale } from '@/i18n/config';
 import { format } from '@/i18n/format';
 import { getMessages } from '@/i18n/get-messages';
-import type { CatalogueBook } from '@/lib/types';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 interface MetaEntry {
   term: string;

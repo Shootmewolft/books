@@ -3,7 +3,7 @@
 import type { PDFDocumentLoadingTask, PDFDocumentProxy } from 'pdfjs-dist';
 import { useEffect, useState } from 'react';
 
-import { loadPdfJs } from '@/lib/pdf/load-pdfjs';
+import { loadPdfJs } from '@/lib/pdfjs/load-pdfjs';
 
 export type PdfStatus = 'idle' | 'loading' | 'ready' | 'failed';
 

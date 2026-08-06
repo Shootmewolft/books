@@ -1,4 +1,4 @@
-import type { CatalogueBook } from '@/lib/types';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 interface BookCoverProps {
   book: CatalogueBook;

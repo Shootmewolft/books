@@ -2,9 +2,9 @@ import { FilterChip } from '@/components/filter-chip';
 import { FilterRow } from '@/components/filter-row';
 import { LOCALES, type Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { buildFilterHref } from '@/lib/catalogue/build-filter-href';
-import type { CatalogueBook, CatalogueFilters, Category, Kind } from '@/lib/types';
-import { localise } from '@/lib/utils/localise';
+import { buildFilterHref } from '@/modules/catalogue/domain/build-filter-href';
+import type { CatalogueBook, CatalogueFilters, Category, Kind } from '@/modules/catalogue/types';
+import { localise } from '@/utils/localise';
 
 const KINDS: readonly Kind[] = ['book', 'guide', 'reference'];
 const MAX_VISIBLE_TAGS = 24;

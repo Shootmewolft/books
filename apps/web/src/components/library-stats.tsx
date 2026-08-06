@@ -1,7 +1,7 @@
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import type { CatalogueStats } from '@/lib/types';
-import { formatBytes } from '@/lib/utils/format-bytes';
+import type { CatalogueStats } from '@/modules/catalogue/types';
+import { formatBytes } from '@/utils/format-bytes';
 
 interface LibraryStatsProps {
   stats: CatalogueStats;

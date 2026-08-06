@@ -1,4 +1,4 @@
-import type { CatalogueBook } from '@/lib/types';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 export function BookCardMeta({ book }: { book: CatalogueBook }) {
   const hasMultipleLanguages = book.languages.length > 1;

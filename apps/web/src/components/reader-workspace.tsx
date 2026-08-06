@@ -6,7 +6,7 @@ import { useCallback, useState } from 'react';
 import { ReaderPane } from '@/components/reader-pane';
 import type { Locale } from '@/i18n/config';
 import type { Messages } from '@/i18n/types';
-import type { CatalogueBook } from '@/lib/types';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 interface PaneTarget {
   book: CatalogueBook;

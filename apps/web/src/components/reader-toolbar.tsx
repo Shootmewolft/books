@@ -3,7 +3,7 @@
 import { IconButton } from '@/components/icon-button';
 import { PaneLanguageSwitch } from '@/components/pane-language-switch';
 import type { Messages } from '@/i18n/types';
-import type { BookFile } from '@/lib/types';
+import type { BookFile } from '@/modules/catalogue/types';
 
 interface ReaderToolbarProps {
   title: string;

@@ -1,6 +1,5 @@
 export const en = {
   meta: {
-    title: 'Library',
     description: 'A curated collection of software engineering books, with a reader built in.',
   },
   nav: {

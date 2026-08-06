@@ -6,7 +6,7 @@ import { RightsNotice } from '@/components/rights-notice';
 import { StatsPlaceholder } from '@/components/stats-placeholder';
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { GITHUB_URL } from '@/lib/github/constants';
+import { GITHUB_URL } from '@/modules/repository/constants/repository';
 
 export function SiteFooter({ locale }: { locale: Locale }) {
   const messages = getMessages(locale);

@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation';
 import { ReaderWorkspace } from '@/components/reader-workspace';
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { getBookByPath } from '@/lib/catalogue/get-book-by-path';
-import type { CatalogueBook } from '@/lib/types';
+import { getBookByPath } from '@/modules/catalogue/services/get-book-by-path';
+import type { CatalogueBook } from '@/modules/catalogue/types';
 
 interface PaneTarget {
   book: CatalogueBook;
@@ -38,10 +38,12 @@ async function resolvePane(reference: string | undefined): Promise<PaneTarget | 
 export async function ReaderLoader({ searchParams, locale }: ReaderLoaderProps) {
   const params = await searchParams;
 
-  const primary = await resolvePane(firstValue(params['a']));
-  if (primary === null) notFound();
+  const [primary, secondary] = await Promise.all([
+    resolvePane(firstValue(params['a'])),
+    resolvePane(firstValue(params['b'])),
+  ]);
 
-  const secondary = await resolvePane(firstValue(params['b']));
+  if (primary === undefined || primary === null) notFound();
 
   return (
     <ReaderWorkspace

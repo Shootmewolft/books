@@ -7,9 +7,9 @@ import { SearchField } from '@/components/search-field';
 import type { Locale } from '@/i18n/config';
 import { format } from '@/i18n/format';
 import { getMessages } from '@/i18n/get-messages';
-import { filterBooks } from '@/lib/catalogue/filter-books';
-import { getCatalogue } from '@/lib/catalogue/get-catalogue';
-import { parseFilters } from '@/lib/catalogue/parse-filters';
+import { filterBooks } from '@/modules/catalogue/domain/filter-books';
+import { parseFilters } from '@/modules/catalogue/domain/parse-filters';
+import { getCatalogue } from '@/modules/catalogue/services/get-catalogue';
 
 interface CatalogueResultsProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;

@@ -5,6 +5,7 @@ import { LocaleSwitch } from '@/components/locale-switch';
 import { LocaleSwitchFallback } from '@/components/locale-switch-fallback';
 import { RepoStarLink } from '@/components/repo-star-link';
 import { RepoStarLinkFallback } from '@/components/repo-star-link-fallback';
+import { SITE_NAME } from '@/constants/site-name';
 import type { Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
 
@@ -16,7 +17,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
         <Link href={`/${locale}`} className="flex items-baseline gap-2.5">
           <span className="font-display font-semibold text-heading text-paper leading-none">
-            {messages.meta.title}
+            {SITE_NAME}
           </span>
         </Link>
 

@@ -17,16 +17,6 @@
   --color-patina: #4a9782;
   --color-patina-dim: #35695b;
 
-  --color-cat-foundations: #4a6fa5;
-  --color-cat-programming: #c9a227;
-  --color-cat-architecture: #8b6ba8;
-  --color-cat-data: #4a9782;
-  --color-cat-platform: #5b8dbe;
-  --color-cat-quality: #a85f5f;
-  --color-cat-security: #b5734a;
-  --color-cat-craft: #7d9b6a;
-  --color-cat-career: #9b8aa6;
-
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-body: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
@@ -56,6 +46,18 @@
     color-mix(in oklab, var(--color-brass) 7%, transparent),
     transparent 65%
   );
+}
+
+@theme static {
+  --color-cat-foundations: #4a6fa5;
+  --color-cat-programming: #c9a227;
+  --color-cat-architecture: #8b6ba8;
+  --color-cat-data: #4a9782;
+  --color-cat-platform: #5b8dbe;
+  --color-cat-quality: #a85f5f;
+  --color-cat-security: #b5734a;
+  --color-cat-craft: #7d9b6a;
+  --color-cat-career: #9b8aa6;
 }
 
 :root {

@@ -3,11 +3,13 @@ import { notFound } from 'next/navigation';
 
 import { BookGrid } from '@/components/book-grid';
 import { CategoryNav } from '@/components/category-nav';
+import { JsonLd } from '@/components/json-ld';
 import { LibraryStats } from '@/components/library-stats';
 import { Shelf } from '@/components/shelf';
 import { isLocale } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { getCatalogue } from '@/lib/catalogue/get-catalogue';
+import { getCatalogue } from '@/modules/catalogue/services/get-catalogue';
+import { buildWebsiteSchema } from '@/seo/build-website-schema';
 
 import type { LocalePageProps } from '../route-props';
 
@@ -32,6 +34,8 @@ export default async function HomePage(props: LocalePageProps) {
 
   return (
     <>
+      <JsonLd schema={buildWebsiteSchema(lang, messages.meta.description)} />
+
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-10">
         <p className="call-number mb-4">{stats.books} volumes</p>
         <h1 className="font-display font-semibold text-display text-paper">

@@ -6,12 +6,16 @@ import { BookCover } from '@/components/book-cover';
 import { BookFileActions } from '@/components/book-file-actions';
 import { BookGrid } from '@/components/book-grid';
 import { BookMetaList } from '@/components/book-meta-list';
+import { JsonLd } from '@/components/json-ld';
 import { TagList } from '@/components/tag-list';
+import { SITE_URL } from '@/constants/site-url';
 import { isLocale, LOCALES } from '@/i18n/config';
 import { getMessages } from '@/i18n/get-messages';
-import { getBookByPath } from '@/lib/catalogue/get-book-by-path';
-import { getCatalogue } from '@/lib/catalogue/get-catalogue';
-import { getRelatedBooks } from '@/lib/catalogue/get-related-books';
+import { buildBookSchema } from '@/modules/catalogue/domain/build-book-schema';
+import { getRelatedBooks } from '@/modules/catalogue/domain/get-related-books';
+import { getBookByPath } from '@/modules/catalogue/services/get-book-by-path';
+import { getCatalogue } from '@/modules/catalogue/services/get-catalogue';
+import { buildAlternates } from '@/seo/build-alternates';
 
 import type { BookPageProps } from '../../../route-props';
 
@@ -29,6 +33,7 @@ export async function generateMetadata(props: BookPageProps): Promise<Metadata> 
   if (book === null) return {};
 
   return {
+    alternates: buildAlternates(lang, `/book/${path.join('/')}`),
     title: book.title,
     description: book.subtitle ?? `${book.title} — ${book.authors.join(', ')}`,
   };
@@ -47,6 +52,8 @@ export default async function BookPage(props: BookPageProps) {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-14">
+      <JsonLd schema={buildBookSchema({ book, locale: lang, siteUrl: SITE_URL })} />
+
       <Link
         href={`/${lang}/catalogue?category=${book.category}`}
         className="text-paper-faint text-small transition-colors hover:text-brass"

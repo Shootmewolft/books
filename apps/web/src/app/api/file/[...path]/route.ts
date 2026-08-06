@@ -2,7 +2,7 @@ import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { Readable } from 'node:stream';
 import type { NextRequest } from 'next/server';
-import { resolveInLibrary } from '@/lib/paths/resolve-in-library';
+import { resolveInLibrary } from '@/server/library-path/resolve-in-library';
 
 const ONE_YEAR_IMMUTABLE = 'public, max-age=31536000, immutable';
 

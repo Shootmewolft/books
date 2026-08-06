@@ -1,6 +1,7 @@
 import Form from 'next/form';
 
-import type { CatalogueFilters } from '@/lib/types';
+import { FILTER_PARAM_NAMES } from '@/modules/catalogue/constants/filter-param-names';
+import type { CatalogueFilters } from '@/modules/catalogue/types';
 
 interface SearchFieldProps {
   action: string;
@@ -24,7 +25,12 @@ export function SearchField({
   return (
     <Form action={action} scroll={false} className="relative">
       {preserved.map(([key, value]) => (
-        <input key={key} type="hidden" name={key} value={String(value)} />
+        <input
+          key={key}
+          type="hidden"
+          name={FILTER_PARAM_NAMES[key as keyof CatalogueFilters]}
+          value={String(value)}
+        />
       ))}
 
       <label htmlFor="catalogue-search" className="sr-only">
@@ -34,7 +40,7 @@ export function SearchField({
       <input
         id="catalogue-search"
         type="search"
-        name="q"
+        name={FILTER_PARAM_NAMES.query}
         defaultValue={filters.query ?? ''}
         placeholder={placeholder}
         autoComplete="off"

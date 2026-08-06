@@ -9,6 +9,7 @@ const ROOT = process.cwd();
 const LIBRARY = join(ROOT, 'library');
 const GITHUB_USER = 'shootmewolft';
 const REPO = 'books';
+const SITE_NAME = 'La Biblioteca del Software';
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -67,7 +68,7 @@ async function build() {
 
   lines.push('<div align="center">');
   lines.push('');
-  lines.push('# 📚 Library');
+  lines.push(`# 📚 ${SITE_NAME}`);
   lines.push('');
   lines.push('**A curated collection of software engineering books, with a reader built in.**');
   lines.push('');

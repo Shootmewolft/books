@@ -1,6 +1,6 @@
 'use client';
 
-import type { BookFile } from '@/lib/types';
+import type { BookFile } from '@/modules/catalogue/types';
 
 interface PaneLanguageSwitchProps {
   files: readonly BookFile[];
