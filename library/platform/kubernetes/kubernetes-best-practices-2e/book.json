@@ -1,14 +1,17 @@
 {
   "$schema": "../../../../schema/book.schema.json",
-  "slug": "brendan-burns-eddie-villalba-dave-strebel-and-lachlan-evenson-2e",
-  "title": "Brendan Burns, Eddie Villalba, Dave Strebel, and Lachlan Evenson",
-  "subtitle": null,
+  "slug": "kubernetes-best-practices-2e",
+  "title": "Kubernetes Best Practices",
+  "subtitle": "Blueprints for Building Successful Applications on Kubernetes",
   "authors": [
-    "Kubernetes Best Practices_ Blueprints for Building Successful Applications on Kubernetes"
+    "Brendan Burns",
+    "Eddie Villalba",
+    "Dave Strebel",
+    "Lachlan Evenson"
   ],
-  "year": null,
+  "year": 2023,
   "edition": 2,
-  "publisher": "O'Reilly",
+  "publisher": "O'Reilly Media",
   "pages": null,
   "kind": "book",
   "category": "platform",

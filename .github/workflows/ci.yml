@@ -1,0 +1,117 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A second push to the same PR cancels the first; nothing here is worth
+# running twice against stale code.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  code:
+    name: Lint and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # Book PDFs are large; CI never needs their history.
+          fetch-depth: 1
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Biome
+        run: pnpm lint
+
+      - name: Build reader
+        run: pnpm build
+
+  library:
+    name: Validate library
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Schema, taxonomy, slug/edition rules, file existence, size limits, and
+      # cross-library md5 duplicate detection.
+      - name: Validate every book
+        run: pnpm library:validate
+
+      # The catalogue in README.md is generated. If it drifts from the library,
+      # the README starts lying — which is exactly how the previous one ended up
+      # advertising books that did not exist.
+      - name: README is up to date
+        run: node tools/library/readme.mjs --check
+
+  submission:
+    name: Check book submission
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Reject files GitHub cannot store
+        run: |
+          echo "Checking files added in this pull request..."
+          added=$(git diff --name-only --diff-filter=A \
+            "origin/${{ github.base_ref }}...HEAD")
+
+          failed=0
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            [ -f "$file" ] || continue
+
+            size=$(stat -c%s "$file")
+            mb=$(( size / 1048576 ))
+
+            if [ "$size" -gt 104857600 ]; then
+              echo "::error file=$file::${mb}MB exceeds GitHub's 100MB hard limit"
+              failed=1
+            elif [ "$size" -gt 52428800 ]; then
+              echo "::warning file=$file::${mb}MB is above GitHub's 50MB warning threshold"
+            fi
+
+            case "$file" in
+              *.torrent|*.mkv|*.mp4|*.avi|*.iso|*.exe|*.dmg)
+                echo "::error file=$file::not a book — this repository only accepts PDF and EPUB"
+                failed=1
+                ;;
+            esac
+          done <<< "$added"
+
+          exit $failed
+
+      - name: Books must live under library/
+        run: |
+          stray=$(git diff --name-only --diff-filter=A \
+            "origin/${{ github.base_ref }}...HEAD" \
+            | grep -E '\.(pdf|epub)$' | grep -v '^library/' || true)
+
+          if [ -n "$stray" ]; then
+            echo "::error::Books must be added under library/{category}/{subcategory}/{slug}/"
+            echo "$stray"
+            exit 1
+          fi

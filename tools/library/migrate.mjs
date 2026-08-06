@@ -13,11 +13,11 @@
  */
 
 import { execFile } from 'node:child_process'
-import { readFile, writeFile, mkdir, rm } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { promisify } from 'node:util'
 
-import { resolveMapping, DROPPED_PATHS } from './mapping.mjs'
+import { DROPPED_PATHS, resolveMapping } from './mapping.mjs'
 
 const run = promisify(execFile)
 const ROOT = process.cwd()
@@ -179,9 +179,7 @@ async function gitMove(from, to) {
 
 async function main() {
   const apply = process.argv.includes('--apply')
-  const inventory = JSON.parse(
-    await readFile(join(ROOT, 'tools/library/inventory.json'), 'utf8'),
-  )
+  const inventory = JSON.parse(await readFile(join(ROOT, 'tools/library/inventory.json'), 'utf8'))
 
   const plan = buildPlan(inventory)
   const movedFileCount = plan.books.reduce((sum, book) => sum + book.files.length, 0)
@@ -196,8 +194,12 @@ async function main() {
     console.log('\n--- COLLISIONS (two files claim one destination) ---')
     for (const collision of plan.collisions) {
       console.log(`\n  ${collision.destination}`)
-      console.log(`    keep?   ${collision.existing}  (${(collision.existingBytes / 1048576).toFixed(1)} MB)`)
-      console.log(`    keep?   ${collision.incoming}  (${(collision.incomingBytes / 1048576).toFixed(1)} MB)`)
+      console.log(
+        `    keep?   ${collision.existing}  (${(collision.existingBytes / 1048576).toFixed(1)} MB)`,
+      )
+      console.log(
+        `    keep?   ${collision.incoming}  (${(collision.incomingBytes / 1048576).toFixed(1)} MB)`,
+      )
     }
   }
 

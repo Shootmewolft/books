@@ -46,7 +46,10 @@ export const TAXONOMY = [
     },
     order: 1,
     subcategories: [
-      { slug: 'algorithms', label: { en: 'Algorithms & Data Structures', es: 'Algoritmos y Estructuras de Datos' } },
+      {
+        slug: 'algorithms',
+        label: { en: 'Algorithms & Data Structures', es: 'Algoritmos y Estructuras de Datos' },
+      },
       { slug: 'operating-systems', label: { en: 'Operating Systems', es: 'Sistemas Operativos' } },
       { slug: 'networking', label: { en: 'Networking', es: 'Redes' } },
       { slug: 'concurrency', label: { en: 'Concurrency', es: 'Concurrencia' } },
@@ -61,7 +64,10 @@ export const TAXONOMY = [
     },
     order: 2,
     subcategories: [
-      { slug: 'code-quality', label: { en: 'Code Quality & Refactoring', es: 'Calidad y Refactorización' } },
+      {
+        slug: 'code-quality',
+        label: { en: 'Code Quality & Refactoring', es: 'Calidad y Refactorización' },
+      },
       { slug: 'design-patterns', label: { en: 'Design Patterns', es: 'Patrones de Diseño' } },
       { slug: 'java', label: { en: 'Java', es: 'Java' } },
       { slug: 'python', label: { en: 'Python', es: 'Python' } },
@@ -81,10 +87,19 @@ export const TAXONOMY = [
     subcategories: [
       { slug: 'fundamentals', label: { en: 'Fundamentals', es: 'Fundamentos' } },
       { slug: 'patterns', label: { en: 'Architectural Patterns', es: 'Patrones Arquitectónicos' } },
-      { slug: 'domain-driven-design', label: { en: 'Domain-Driven Design', es: 'Domain-Driven Design' } },
+      {
+        slug: 'domain-driven-design',
+        label: { en: 'Domain-Driven Design', es: 'Domain-Driven Design' },
+      },
       { slug: 'microservices', label: { en: 'Microservices', es: 'Microservicios' } },
-      { slug: 'distributed-systems', label: { en: 'Distributed Systems', es: 'Sistemas Distribuidos' } },
-      { slug: 'event-driven', label: { en: 'Event-Driven Architecture', es: 'Arquitectura Orientada a Eventos' } },
+      {
+        slug: 'distributed-systems',
+        label: { en: 'Distributed Systems', es: 'Sistemas Distribuidos' },
+      },
+      {
+        slug: 'event-driven',
+        label: { en: 'Event-Driven Architecture', es: 'Arquitectura Orientada a Eventos' },
+      },
     ],
   },
   {
@@ -96,7 +111,10 @@ export const TAXONOMY = [
     },
     order: 4,
     subcategories: [
-      { slug: 'fundamentals', label: { en: 'Fundamentals & Internals', es: 'Fundamentos e Internos' } },
+      {
+        slug: 'fundamentals',
+        label: { en: 'Fundamentals & Internals', es: 'Fundamentos e Internos' },
+      },
       { slug: 'modeling', label: { en: 'Data Modeling', es: 'Modelado de Datos' } },
       { slug: 'postgresql', label: { en: 'PostgreSQL', es: 'PostgreSQL' } },
       { slug: 'mysql', label: { en: 'MySQL', es: 'MySQL' } },
@@ -146,7 +164,10 @@ export const TAXONOMY = [
     },
     order: 7,
     subcategories: [
-      { slug: 'application-security', label: { en: 'Application Security', es: 'Seguridad de Aplicaciones' } },
+      {
+        slug: 'application-security',
+        label: { en: 'Application Security', es: 'Seguridad de Aplicaciones' },
+      },
       { slug: 'api-security', label: { en: 'API Security', es: 'Seguridad de APIs' } },
     ],
   },
@@ -159,9 +180,15 @@ export const TAXONOMY = [
     },
     order: 8,
     subcategories: [
-      { slug: 'engineering-practice', label: { en: 'Engineering Practice', es: 'Práctica de Ingeniería' } },
+      {
+        slug: 'engineering-practice',
+        label: { en: 'Engineering Practice', es: 'Práctica de Ingeniería' },
+      },
       { slug: 'team-culture', label: { en: 'Team & Culture', es: 'Equipo y Cultura' } },
-      { slug: 'interviews', label: { en: 'Interview Preparation', es: 'Preparación de Entrevistas' } },
+      {
+        slug: 'interviews',
+        label: { en: 'Interview Preparation', es: 'Preparación de Entrevistas' },
+      },
     ],
   },
   {
@@ -194,14 +221,56 @@ export const CATEGORY_SLUGS = TAXONOMY.map((category) => category.slug)
  * so CI validates against this list. Adding a tag is a one-line PR.
  */
 export const TAGS = [
-  'algorithms', 'api', 'aws', 'caching', 'cloud-native', 'concurrency', 'containers',
-  'ddd', 'debugging', 'design-patterns', 'devops', 'distributed-systems', 'docker',
-  'event-driven', 'functional-programming', 'git', 'gof', 'indexing', 'interviews',
-  'java', 'jvm', 'kafka', 'kubernetes', 'leadership', 'legacy-code', 'linux',
-  'machine-learning', 'management', 'messaging', 'microservices', 'mqtt', 'negotiation',
-  'nosql', 'observability', 'oop', 'performance', 'python', 'refactoring', 'reliability',
-  'rest', 'scalability', 'security', 'spring', 'sql', 'streaming', 'system-design',
-  'tdd', 'testing', 'unix', 'web-security',
+  'algorithms',
+  'api',
+  'aws',
+  'caching',
+  'cloud-native',
+  'concurrency',
+  'containers',
+  'ddd',
+  'debugging',
+  'design-patterns',
+  'devops',
+  'distributed-systems',
+  'docker',
+  'event-driven',
+  'functional-programming',
+  'git',
+  'gof',
+  'indexing',
+  'interviews',
+  'java',
+  'jvm',
+  'kafka',
+  'kubernetes',
+  'leadership',
+  'legacy-code',
+  'linux',
+  'machine-learning',
+  'management',
+  'messaging',
+  'microservices',
+  'mqtt',
+  'negotiation',
+  'nosql',
+  'observability',
+  'oop',
+  'performance',
+  'python',
+  'refactoring',
+  'reliability',
+  'rest',
+  'scalability',
+  'security',
+  'spring',
+  'sql',
+  'streaming',
+  'system-design',
+  'tdd',
+  'testing',
+  'unix',
+  'web-security',
 ]
 
 export const TAG_SET = new Set(TAGS)

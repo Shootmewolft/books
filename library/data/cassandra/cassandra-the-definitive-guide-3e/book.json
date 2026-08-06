@@ -1,15 +1,15 @@
 {
   "$schema": "../../../../schema/book.schema.json",
-  "slug": "cassandra-the-defifinitive-guide",
-  "title": "Cassandra The Defifinitive Guide",
-  "subtitle": null,
+  "slug": "cassandra-the-definitive-guide-3e",
+  "title": "Cassandra: The Definitive Guide",
+  "subtitle": "Distributed Data at Web Scale",
   "authors": [
     "Jeff Carpenter",
     "Eben Hewitt"
   ],
-  "year": null,
-  "edition": null,
-  "publisher": null,
+  "year": 2020,
+  "edition": 3,
+  "publisher": "O'Reilly Media",
   "pages": 428,
   "kind": "book",
   "category": "data",

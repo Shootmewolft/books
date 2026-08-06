@@ -1,15 +1,14 @@
 {
   "$schema": "../../../../schema/book.schema.json",
-  "slug": "java-threads",
+  "slug": "java-threads-3e",
   "title": "Java Threads",
   "subtitle": null,
   "authors": [
-    "Oaks",
-    "Scott_Wong",
-    "Henry"
+    "Scott Oaks",
+    "Henry Wong"
   ],
   "year": 2004,
-  "edition": null,
+  "edition": 3,
   "publisher": "O'Reilly Media",
   "pages": 360,
   "kind": "book",

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /**
  * Library inventory scanner.
  *
@@ -12,11 +13,11 @@
  *   node tools/library/inventory.mjs [--root <dir>] [--out <file>]
  */
 
+import { execFile } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { createReadStream } from 'node:fs'
 import { mkdir, readdir, stat, writeFile } from 'node:fs/promises'
 import { basename, extname, join, relative, sep } from 'node:path'
-import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 
 const run = promisify(execFile)
@@ -76,7 +77,10 @@ const KNOWN_PUBLISHERS = [
 function stripNoise(value) {
   let out = value
   for (const pattern of NOISE_PATTERNS) out = out.replace(pattern, ' ')
-  return out.trim().replace(/\s*[-–—]\s*$/, '').trim()
+  return out
+    .trim()
+    .replace(/\s*[-–—]\s*$/, '')
+    .trim()
 }
 
 /**
@@ -112,10 +116,41 @@ function splitAuthors(value) {
 
 /** Words that appear in titles but effectively never inside a person's name. */
 const TITLE_STOPWORDS = new Set([
-  'the', 'a', 'an', 'of', 'for', 'with', 'to', 'in', 'on', 'and', 'your', 'you',
-  'guide', 'introduction', 'handbook', 'cookbook', 'patterns', 'design', 'programming',
-  'edition', 'practical', 'modern', 'learning', 'mastering', 'building', 'how', 'what',
-  'systems', 'software', 'data', 'web', 'science', 'art', 'essentials', 'fundamentals',
+  'the',
+  'a',
+  'an',
+  'of',
+  'for',
+  'with',
+  'to',
+  'in',
+  'on',
+  'and',
+  'your',
+  'you',
+  'guide',
+  'introduction',
+  'handbook',
+  'cookbook',
+  'patterns',
+  'design',
+  'programming',
+  'edition',
+  'practical',
+  'modern',
+  'learning',
+  'mastering',
+  'building',
+  'how',
+  'what',
+  'systems',
+  'software',
+  'data',
+  'web',
+  'science',
+  'art',
+  'essentials',
+  'fundamentals',
 ])
 
 /** Normalises a name for comparison: lowercase, no punctuation, sorted-insensitive. */
@@ -183,9 +218,15 @@ function parseFilename(rawName, pdfInfo = {}) {
 
   // Remove the "(Year, Publisher)" block once harvested so it stops
   // interfering with the title/author split.
-  const withoutParens = working.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim()
+  const withoutParens = working
+    .replace(/\s*\([^)]*\)\s*/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
 
-  const segments = withoutParens.split(/\s+-\s+/).map((part) => part.trim()).filter(Boolean)
+  const segments = withoutParens
+    .split(/\s+-\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean)
 
   let title = withoutParens
   let authors = []
@@ -242,7 +283,10 @@ function parseFilename(rawName, pdfInfo = {}) {
   // around the hyphen; strip it once we know which publisher it is.
   if (publisher) {
     title = title
-      .replace(new RegExp(`\\s*[-–—]?\\s*${publisher.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`, 'i'), '')
+      .replace(
+        new RegExp(`\\s*[-–—]?\\s*${publisher.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`, 'i'),
+        '',
+      )
       .trim()
   }
 
@@ -391,7 +435,9 @@ async function main() {
 
   const { totals } = inventory
   console.log(`Scanned ${totals.files} files (${(totals.bytes / 1024 ** 3).toFixed(2)} GB)`)
-  console.log(`Duplicate groups: ${totals.duplicateGroups} (${totals.redundantFiles} redundant files)`)
+  console.log(
+    `Duplicate groups: ${totals.duplicateGroups} (${totals.redundantFiles} redundant files)`,
+  )
   console.log(`Low-confidence filename parses: ${totals.needsReview}`)
   console.log(`Wrote ${out}`)
 }

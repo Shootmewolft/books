@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shootmewolft/library/schema/book.schema.json",
+  "title": "Book",
+  "description": "Metadata for a single book in the library. One book.json per book directory.",
+  "type": "object",
+  "required": ["slug", "title", "authors", "kind", "category", "subcategory", "tags", "files"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Relative path to this schema, for editor autocompletion."
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 80,
+      "description": "URL-safe identifier. Must equal the containing directory name."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 200
+    },
+    "subtitle": {
+      "type": ["string", "null"],
+      "maxLength": 300
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 2 },
+      "description": "Empty is allowed for anonymous vendor whitepapers, but discouraged."
+    },
+    "year": {
+      "type": ["integer", "null"],
+      "minimum": 1960,
+      "maximum": 2100
+    },
+    "edition": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "maximum": 30,
+      "description": "Distinct editions are distinct books, each with its own directory."
+    },
+    "publisher": {
+      "type": ["string", "null"]
+    },
+    "pages": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "isbn13": {
+      "type": ["string", "null"],
+      "pattern": "^97[89][0-9]{10}$"
+    },
+    "kind": {
+      "enum": ["book", "guide", "reference"],
+      "description": "book: full-length. guide: short-form or whitepaper. reference: poster or cheatsheet."
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "subcategory": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Cross-cutting labels validated against the vocabulary in tools/library/taxonomy.mjs."
+    },
+    "summary": {
+      "type": ["string", "null"],
+      "maxLength": 600,
+      "description": "Optional one-paragraph description shown on the book page."
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "publisher": { "type": "string", "format": "uri" },
+        "openlibrary": { "type": "string", "format": "uri" }
+      },
+      "description": "Where to legitimately buy or borrow the book."
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "description": "One entry per language/format variant living in this directory.",
+      "items": {
+        "type": "object",
+        "required": ["lang", "format", "path", "bytes"],
+        "additionalProperties": false,
+        "properties": {
+          "lang": {
+            "enum": ["en", "es"],
+            "description": "Same work in another language belongs here, not in a separate book."
+          },
+          "format": { "enum": ["pdf", "epub"] },
+          "path": {
+            "type": "string",
+            "pattern": "^[a-z]{2}\\.(pdf|epub)$",
+            "description": "Filename relative to the book directory. Always {lang}.{format}."
+          },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "md5": { "type": "string", "pattern": "^[a-f0-9]{32}$" }
+        }
+      }
+    }
+  }
+}

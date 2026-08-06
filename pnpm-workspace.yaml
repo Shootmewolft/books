@@ -1,0 +1,8 @@
+packages:
+  - 'apps/*'
+
+# The library itself is data, not a package. It is read at build/request time by
+# apps/web and validated by tools/, so it deliberately stays outside the
+# workspace graph.
+ignoredBuiltDependencies:
+  - '@biomejs/biome'

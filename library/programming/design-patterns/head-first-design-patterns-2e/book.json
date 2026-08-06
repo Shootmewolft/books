@@ -1,14 +1,15 @@
 {
   "$schema": "../../../../schema/book.schema.json",
-  "slug": "head-first-design-patterns-by-eric-freeman-elisabeth-robson-2e",
-  "title": "Head First Design Patterns by Eric Freeman, Elisabeth Robson",
-  "subtitle": null,
+  "slug": "head-first-design-patterns-2e",
+  "title": "Head First Design Patterns",
+  "subtitle": "Building Extensible and Maintainable Object-Oriented Software",
   "authors": [
-    "Eric Freeman;Elisabeth Robson;"
+    "Eric Freeman",
+    "Elisabeth Robson"
   ],
-  "year": null,
+  "year": 2020,
   "edition": 2,
-  "publisher": null,
+  "publisher": "O'Reilly Media",
   "pages": 672,
   "kind": "book",
   "category": "programming",

@@ -4,12 +4,11 @@
   "title": "Building Microservices",
   "subtitle": null,
   "authors": [
-    "Newman",
-    "Sam;"
+    "Sam Newman"
   ],
-  "year": null,
+  "year": 2021,
   "edition": 2,
-  "publisher": null,
+  "publisher": "O'Reilly Media",
   "pages": 615,
   "kind": "book",
   "category": "architecture",

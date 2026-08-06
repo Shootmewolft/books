@@ -4,11 +4,12 @@
   "title": "hands-on-restful-api-design-patterns-and-best-practices",
   "subtitle": null,
   "authors": [
-    "Harihara Subramanian;Pethuru Raj;"
+    "Harihara Subramanian",
+    "Pethuru Raj"
   ],
-  "year": null,
+  "year": 2019,
   "edition": null,
-  "publisher": null,
+  "publisher": "Packt Publishing",
   "pages": 365,
   "kind": "book",
   "category": "programming",

@@ -1,13 +1,14 @@
 {
   "$schema": "../../../../schema/book.schema.json",
-  "slug": "pro-git",
+  "slug": "pro-git-2e",
   "title": "Pro Git",
   "subtitle": null,
   "authors": [
-    "Scott Chacon_ Ben Straub"
+    "Scott Chacon",
+    "Ben Straub"
   ],
-  "year": null,
-  "edition": null,
+  "year": 2023,
+  "edition": 2,
   "publisher": null,
   "pages": 506,
   "kind": "book",

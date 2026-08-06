@@ -1,0 +1,54 @@
+name: Suggest a book
+description: Propose a book for the library
+title: 'Book: '
+labels: ['book-suggestion']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggesting is optional — you can open a pull request directly.
+        Read [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) first.
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+
+  - type: input
+    id: authors
+    attributes:
+      label: Author(s)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it
+      options:
+        - Book — full-length published work
+        - Guide — short-form guide, booklet, or vendor whitepaper
+        - Reference — cheatsheet, poster, or single diagram
+    validations:
+      required: true
+
+  - type: input
+    id: category
+    attributes:
+      label: Proposed category / subcategory
+      description: Must exist in tools/library/taxonomy.mjs, or say which one to add
+      placeholder: architecture/domain-driven-design
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is not leaked, pre-release, or embargoed material
+          required: true
+        - label: I have read COPYRIGHT.md
+          required: true

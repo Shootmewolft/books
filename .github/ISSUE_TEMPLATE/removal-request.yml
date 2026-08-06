@@ -1,0 +1,30 @@
+name: Removal request
+description: Request removal of a work you hold rights to. Honoured without argument.
+title: 'Removal request: '
+labels: ['removal', 'priority']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you are an author, publisher, or rights holder and want a work
+        removed, this request will be honoured.
+
+        **No proof of ownership is required and none will be requested.**
+        You do not need to justify the request or cite a legal basis.
+
+  - type: input
+    id: book
+    attributes:
+      label: Which work
+      description: Title, or the path under library/
+      placeholder: library/architecture/fundamentals/clean-architecture
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Optional. Leave blank if you prefer.
+    validations:
+      required: false
