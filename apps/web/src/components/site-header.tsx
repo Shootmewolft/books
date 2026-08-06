@@ -1,0 +1,36 @@
+import Link from 'next/link';
+import { Suspense } from 'react';
+
+import { LocaleSwitch } from '@/components/locale-switch';
+import { LocaleSwitchFallback } from '@/components/locale-switch-fallback';
+import type { Locale } from '@/i18n/config';
+import { getMessages } from '@/i18n/get-messages';
+
+export function SiteHeader({ locale }: { locale: Locale }) {
+  const messages = getMessages(locale);
+
+  return (
+    <header className="sticky top-0 z-40 border-edge/70 border-b bg-void/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
+        <Link href={`/${locale}`} className="flex items-baseline gap-2.5">
+          <span className="call-number text-brass">LIB·000</span>
+          <span className="font-display font-semibold text-heading text-paper leading-none">
+            {messages.meta.title}
+          </span>
+        </Link>
+
+        <nav className="flex items-center gap-5">
+          <Link
+            href={`/${locale}/catalogue`}
+            className="text-paper-dim text-small transition-colors hover:text-paper"
+          >
+            {messages.nav.catalogue}
+          </Link>
+          <Suspense fallback={<LocaleSwitchFallback current={locale} />}>
+            <LocaleSwitch current={locale} />
+          </Suspense>
+        </nav>
+      </div>
+    </header>
+  );
+}

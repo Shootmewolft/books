@@ -1,41 +1,16 @@
-/**
- * Canonical library taxonomy.
- *
- * Two rules govern this file:
- *
- *  1. A book has exactly ONE home (category + subcategory). The old tree let a
- *     book live in three places at once, which is why Designing Data-Intensive
- *     Applications existed as three identical copies.
- *  2. Everything else is a TAG. Tags are many-to-many and are what the web app
- *     actually filters on, so cross-cutting books stay discoverable without
- *     being duplicated on disk.
- *
- * Adding a category is a deliberate act: it requires a real book to justify it.
- * Empty categories are not created "for later" — the previous tree had three of
- * them (Blockchain & Web3, Cloud Computing, Web & Mobile Development), each with
- * a README promising books that did not exist.
- */
-
-/** Content shape. Keeps 1-page posters out of the same grid as 1300-page books. */
 export const KINDS = /** @type {const} */ ({
   book: 'A full-length published book.',
   guide: 'A short-form guide, booklet, or vendor whitepaper.',
   reference: 'A cheatsheet, poster, or single-diagram reference.',
-})
+});
 
-/** Languages a file can be published in. Extend as translations are added. */
 export const LANGUAGES = /** @type {const} */ ({
   en: 'English',
   es: 'Español',
-})
+});
 
-export const FORMATS = /** @type {const} */ (['pdf', 'epub'])
+export const FORMATS = /** @type {const} */ (['pdf', 'epub']);
 
-/**
- * Category tree. `order` drives navigation sequence — it runs from the
- * theoretical foundations up to the human side of the craft, which is roughly
- * how someone actually grows into the field.
- */
 export const TAXONOMY = [
   {
     slug: 'foundations',
@@ -205,21 +180,16 @@ export const TAXONOMY = [
       { slug: 'business', label: { en: 'Business', es: 'Negocio' } },
     ],
   },
-]
+];
 
-/** Flat lookup: "category/subcategory" -> true. Used to validate book.json. */
 export const VALID_PATHS = new Set(
   TAXONOMY.flatMap((category) =>
     category.subcategories.map((sub) => `${category.slug}/${sub.slug}`),
   ),
-)
+);
 
-export const CATEGORY_SLUGS = TAXONOMY.map((category) => category.slug)
+export const CATEGORY_SLUGS = TAXONOMY.map((category) => category.slug);
 
-/**
- * Curated tag vocabulary. Free-form tags fragment fast ("k8s" vs "kubernetes"),
- * so CI validates against this list. Adding a tag is a one-line PR.
- */
 export const TAGS = [
   'algorithms',
   'api',
@@ -271,16 +241,14 @@ export const TAGS = [
   'testing',
   'unix',
   'web-security',
-]
+];
 
-export const TAG_SET = new Set(TAGS)
+export const TAG_SET = new Set(TAGS);
 
-/** Resolves a category slug to its definition, or undefined. */
 export function findCategory(slug) {
-  return TAXONOMY.find((category) => category.slug === slug)
+  return TAXONOMY.find((category) => category.slug === slug);
 }
 
-/** Resolves a "category/subcategory" pair, or undefined if either is unknown. */
 export function findSubcategory(categorySlug, subcategorySlug) {
-  return findCategory(categorySlug)?.subcategories.find((sub) => sub.slug === subcategorySlug)
+  return findCategory(categorySlug)?.subcategories.find((sub) => sub.slug === subcategorySlug);
 }

@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0b0d12;
+  --color-deep: #12151d;
+  --color-raised: #1a1f2a;
+  --color-edge: #252b38;
+  --color-edge-bright: #333b4d;
+
+  --color-paper: #e8e4da;
+  --color-paper-dim: #9a9487;
+  --color-paper-faint: #6b6659;
+
+  --color-brass: #c9a227;
+  --color-brass-dim: #8f7420;
+  --color-brass-glow: #e8c454;
+  --color-patina: #4a9782;
+  --color-patina-dim: #35695b;
+
+  --color-cat-foundations: #4a6fa5;
+  --color-cat-programming: #c9a227;
+  --color-cat-architecture: #8b6ba8;
+  --color-cat-data: #4a9782;
+  --color-cat-platform: #5b8dbe;
+  --color-cat-quality: #a85f5f;
+  --color-cat-security: #b5734a;
+  --color-cat-craft: #7d9b6a;
+  --color-cat-career: #9b8aa6;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-body: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
+
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.03em;
+  --text-title: 2.25rem;
+  --text-title--line-height: 1.05;
+  --text-title--letter-spacing: -0.02em;
+  --text-heading: 1.375rem;
+  --text-heading--line-height: 1.2;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.8125rem;
+  --text-small--line-height: 1.5;
+  --text-micro: 0.6875rem;
+  --text-micro--line-height: 1.4;
+
+  --radius-card: 3px;
+  --radius-pill: 999px;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --lamp-glow: radial-gradient(
+    ellipse 90rem 45rem at 50% -12rem,
+    color-mix(in oklab, var(--color-brass) 7%, transparent),
+    transparent 65%
+  );
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-void);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--lamp-glow), var(--color-void);
+  background-attachment: fixed;
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings:
+    "SOFT" 30,
+    "WONK" 1,
+    "opsz" 84;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-brass) 30%, transparent);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-edge-bright) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-edge-bright);
+  border-radius: 999px;
+  border: 3px solid var(--color-void);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brass-dim);
+}
+
+.shelf {
+  border-bottom: 1px solid var(--color-edge-bright);
+  box-shadow: 0 1px 0 0 color-mix(in oklab, var(--color-brass) 22%, transparent);
+}
+
+.spine {
+  --spine-tint: var(--color-paper-faint);
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--spine-width, 14px);
+  height: var(--spine-height, 60%);
+  align-self: flex-end;
+  border-radius: 1px 1px 0 0;
+  background: linear-gradient(
+    177deg,
+    color-mix(in oklab, var(--spine-tint) 78%, var(--color-void)),
+    color-mix(in oklab, var(--spine-tint) 32%, var(--color-void))
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--spine-tint) 45%, transparent),
+    2px 0 6px -2px rgb(0 0 0 / 0.7);
+  transition:
+    transform 340ms var(--ease-out-quart),
+    filter 340ms var(--ease-out-quart);
+  cursor: pointer;
+}
+
+.spine::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: color-mix(in oklab, var(--color-paper) 22%, transparent);
+  border-radius: 1px 1px 0 0;
+}
+
+.spine:hover,
+.spine:focus-visible {
+  transform: translateY(-10px);
+  filter: brightness(1.45) saturate(1.15);
+  z-index: 2;
+}
+
+.shelf:has(.spine:hover) .spine:not(:hover) {
+  filter: brightness(0.55) saturate(0.65);
+}
+
+.call-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-paper-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.cover-frame {
+  background: var(--color-raised);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--color-paper) 10%, transparent),
+    0 12px 28px -12px rgb(0 0 0 / 0.85);
+}
+
+.rule-brass {
+  border-left: 2px solid color-mix(in oklab, var(--color-brass-dim) 40%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .spine:hover,
+  .spine:focus-visible {
+    transform: none;
+  }
+}

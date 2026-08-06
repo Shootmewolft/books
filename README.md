@@ -6,8 +6,8 @@
 
 `151 books` · `158 files` · `1.48 GB` · `9 categories`
 
-[![Stars](https://img.shields.io/github/stars/shootmewolft/library?style=flat-square&label=stars&color=8b5cf6)](https://github.com/shootmewolft/library/stargazers)
-[![Last commit](https://img.shields.io/github/last-commit/shootmewolft/library?style=flat-square&color=6366f1)](https://github.com/shootmewolft/library/commits)
+[![Stars](https://img.shields.io/github/stars/shootmewolft/books?style=flat-square&label=stars&color=8b5cf6)](https://github.com/shootmewolft/books/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/shootmewolft/books?style=flat-square&color=6366f1)](https://github.com/shootmewolft/books/commits)
 [![License](https://img.shields.io/badge/code-MIT-blue?style=flat-square)](./LICENSE)
 
 Built by [**Shoot**](https://github.com/shootmewolft)

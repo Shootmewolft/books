@@ -1,20 +1,3 @@
-/**
- * Legacy tree -> canonical taxonomy mapping.
- *
- * Strategy: broad directory rules cover the common case, explicit overrides
- * handle every book that was filed in the wrong place or whose filename parsed
- * badly. Overrides always win.
- *
- * This file is the curated judgement layer. Nothing here is inferred at runtime,
- * which means the migration is fully reviewable before a single file moves.
- */
-
-/**
- * Byte-identical copies to delete. The retained path is listed as `keep`, chosen
- * by whichever location matches the new taxonomy most closely.
- *
- * Verified by md5 in inventory.json — these are exact duplicates, not editions.
- */
 export const DUPLICATES = [
   {
     keep: 'Databases/design/Designing Data Intensive Applications - Martin Kleppmann.pdf',
@@ -76,15 +59,8 @@ export const DUPLICATES = [
     keep: 'Software Architecture/developing-open-cloud-native-microservice.pdf',
     drop: ['Distributed Systems/Microservices/developing-open-cloud-native-microservice.pdf'],
   },
-]
+];
 
-/**
- * Not byte-identical, but the same work in a strictly worse copy — truncated
- * extracts, low-quality scans, or early-release samples padded out to look like
- * the full book. Each decision is justified by page count, which is the only
- * reliable signal here: file size is actively misleading (the 18.3 MB scan of
- * Design Patterns has FEWER pages than the 4.1 MB one).
- */
 export const INFERIOR_COPIES = [
   {
     keep: "Databases/mysql/Silvia Botros, Jeremy Tinley - High Performance MySQL_ Proven Strategies for Operating at Scale (2021, O'Reilly Media).pdf",
@@ -121,18 +97,13 @@ export const INFERIOR_COPIES = [
     drop: 'Software Architecture/Software Architecture The Hard Parts - Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani.pdf',
     reason: '47 pages vs 462 — sample chapter',
   },
-]
+];
 
-/** Flattened set of paths that must not be migrated. */
 export const DROPPED_PATHS = new Set([
   ...DUPLICATES.flatMap((group) => group.drop),
   ...INFERIOR_COPIES.map((entry) => entry.drop),
-])
+]);
 
-/**
- * Directory prefix -> destination. Longest matching prefix wins, so a specific
- * subdirectory rule beats its parent.
- */
 export const DIRECTORY_RULES = [
   ['Algorithms/', { category: 'foundations', subcategory: 'algorithms', tags: ['algorithms'] }],
   [
@@ -257,17 +228,9 @@ export const DIRECTORY_RULES = [
     'System Design/',
     { category: 'architecture', subcategory: 'fundamentals', tags: ['system-design'] },
   ],
-]
+];
 
-/**
- * Per-file corrections. Keyed by legacy path.
- *
- * Two kinds of entry live here:
- *   - Books filed in a directory that lied about their subject.
- *   - Books whose filename parsed badly and need explicit bibliographic data.
- */
 export const OVERRIDES = {
-  // --- Misfiled: not MySQL-specific, it is general relational modelling ---
   'Databases/mysql/Michael J. Hernandez - Database Design for Mere Mortals_ A Hands-On Guide to Relational Database Design (2013, Addison-Wesley Professional).pdf':
     {
       category: 'data',
@@ -298,7 +261,6 @@ export const OVERRIDES = {
       tags: ['sql', 'cloud-native'],
     },
 
-  // --- Misfiled: language/runtime concurrency belongs with foundations ---
   'programming/Concurrent Programming in Java Design Principles.pdf': {
     category: 'foundations',
     subcategory: 'concurrency',
@@ -329,7 +291,6 @@ export const OVERRIDES = {
       tags: ['concurrency', 'algorithms'],
     },
 
-  // --- Misfiled: API design is a programming concern, not architecture ---
   'programming/Designing Web APIs by Brenda Jin, Saurabh Sahni, Amir Shevat-OReilly.pdf': {
     category: 'programming',
     subcategory: 'apis',
@@ -368,7 +329,6 @@ export const OVERRIDES = {
     tags: ['api', 'security'],
   },
 
-  // --- Misfiled: these are architecture, not generic "system design" ---
   'System Design/Chris Richardson - Microservices Patterns_ With examples in Java (2018, Manning Publications).pdf':
     {
       category: 'architecture',
@@ -446,7 +406,6 @@ export const OVERRIDES = {
     tags: ['scalability'],
   },
 
-  // --- Misfiled: culture and team books are craft, not architecture ---
   'Software Architecture/Accelerate - Building and Scaling High Performing Technology Organisations - Nicole Fergrson.pdf':
     {
       category: 'craft',
@@ -503,7 +462,6 @@ export const OVERRIDES = {
       tags: ['devops', 'management', 'reliability'],
     },
 
-  // --- Misfiled: quality concerns ---
   'Software Engineering/kent-beck-test-driven-development-by-example.pdf': {
     category: 'quality',
     subcategory: 'testing',
@@ -532,7 +490,6 @@ export const OVERRIDES = {
     tags: ['testing', 'performance'],
   },
 
-  // --- Misfiled: code quality ---
   'Software Engineering/Martin Fowler - Refactoring - Improving the Design of Existing Code.pdf': {
     category: 'programming',
     subcategory: 'code-quality',
@@ -607,7 +564,6 @@ export const OVERRIDES = {
       tags: [],
     },
 
-  // --- Craft: practice and interviews ---
   'Problem Solving/_Grokking the Advanced System Design Interview (2021).pdf': {
     category: 'craft',
     subcategory: 'interviews',
@@ -646,7 +602,6 @@ export const OVERRIDES = {
       tags: ['interviews', 'machine-learning', 'system-design'],
     },
 
-  // --- Career ---
   'Soft Skills/Strengths Finder 2.0 - Rath Tom. .pdf': {
     category: 'career',
     subcategory: 'self-development',
@@ -678,7 +633,6 @@ export const OVERRIDES = {
     tags: [],
   },
 
-  // --- Foundations: OS files with unparseable names ---
   'Operating Systems/a simple, Unix-like teaching operating system.pdf': {
     category: 'foundations',
     subcategory: 'operating-systems',
@@ -716,7 +670,6 @@ export const OVERRIDES = {
       tags: ['linux', 'unix'],
     },
 
-  // --- Data: vendor guides that are not books ---
   'Apache Kafka/kafka-best-practices.pdf': {
     category: 'data',
     subcategory: 'kafka',
@@ -812,7 +765,6 @@ export const OVERRIDES = {
       tags: ['distributed-systems', 'performance', 'indexing'],
     },
 
-  // --- Platform ---
   'devops/k8s/Marko Luksa - Kubernetes in Action (2018, Manning Publications).epub': {
     category: 'platform',
     subcategory: 'kubernetes',
@@ -840,7 +792,6 @@ export const OVERRIDES = {
     tags: ['mqtt', 'messaging'],
   },
 
-  // --- Architecture fundamentals with broken names ---
   'Software Architecture/Fundamentals of Software Architecture.pdf': {
     category: 'architecture',
     subcategory: 'fundamentals',
@@ -901,7 +852,6 @@ export const OVERRIDES = {
       subcategory: 'microservices',
       tags: ['microservices', 'design-patterns'],
     },
-  // --- Distinct editions of one work: each gets its own directory ---
   'Databases/design/Beginning database design solutions (2009, Wiley Pub) - Rod Stephens.pdf': {
     category: 'data',
     subcategory: 'modeling',
@@ -996,7 +946,6 @@ export const OVERRIDES = {
       tags: ['python'],
     },
 
-  // --- Filename lies: this is Docker in PRACTICE, a different book entirely ---
   'devops/container/Miell, Ian_Sayers, Aiden Hobson - Docker in Action (2019, Manning Publications) - libgen.li.pdf':
     {
       category: 'platform',
@@ -1020,7 +969,6 @@ export const OVERRIDES = {
       tags: ['docker', 'containers'],
     },
 
-  // --- Summaries are separate works from the book they summarise ---
   'Soft Skills/negotiating/EssentialInsight Summaries - Summary_ Never Split the Difference_ Negotiating As If Your Life Depended On It - by Chris Voss (2021, EssentialInsight Summaries) - libgen.li.pdf':
     {
       category: 'career',
@@ -1066,27 +1014,23 @@ export const OVERRIDES = {
 
   'Distributed Systems/_Designing Data Intensive Applications.pdf': { drop: true },
   'Software Architecture/_Designing Data Intensive Applications.pdf': { drop: true },
-}
+};
 
-/**
- * Resolves the destination for a legacy path by applying the longest matching
- * directory rule, then layering the override on top.
- */
 export function resolveMapping(sourcePath) {
-  if (DROPPED_PATHS.has(sourcePath)) return null
+  if (DROPPED_PATHS.has(sourcePath)) return null;
 
-  let rule = null
-  let matchedLength = -1
+  let rule = null;
+  let matchedLength = -1;
   for (const [prefix, destination] of DIRECTORY_RULES) {
     if (sourcePath.startsWith(prefix) && prefix.length > matchedLength) {
-      rule = destination
-      matchedLength = prefix.length
+      rule = destination;
+      matchedLength = prefix.length;
     }
   }
 
-  const override = OVERRIDES[sourcePath] ?? {}
-  if (override.drop) return null
+  const override = OVERRIDES[sourcePath] ?? {};
+  if (override.drop) return null;
 
-  const tags = [...new Set([...(rule?.tags ?? []), ...(override.tags ?? [])])]
-  return { ...rule, ...override, tags }
+  const tags = [...new Set([...(rule?.tags ?? []), ...(override.tags ?? [])])];
+  return { ...rule, ...override, tags };
 }
