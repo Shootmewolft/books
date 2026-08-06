@@ -6,6 +6,8 @@ import { LIBRARY_CDN_URL } from '@/constants/library-cdn';
 import { buildCdnUrl } from '@/modules/library-files/domain/build-cdn-url';
 import { resolveInLibrary } from '@/server/library-path/resolve-in-library';
 
+export const maxDuration = 10;
+
 const ONE_YEAR_IMMUTABLE = 'public, max-age=31536000, immutable';
 
 const CONTENT_TYPES: Record<string, string> = {

@@ -1,17 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "buildCommand": "pnpm --filter @library/web build",
-  "installCommand": "pnpm install --frozen-lockfile",
-  "outputDirectory": "apps/web/.next",
   "regions": ["iad1"],
   "github": {
     "silent": true
-  },
-  "functions": {
-    "apps/web/src/app/api/file/[...path]/route.ts": {
-      "maxDuration": 10
-    }
   },
   "headers": [
     {
@@ -25,10 +17,6 @@
           "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
         }
       ]
-    },
-    {
-      "source": "/api/file/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/icon.svg",
