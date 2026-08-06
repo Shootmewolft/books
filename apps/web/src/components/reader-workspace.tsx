@@ -25,6 +25,7 @@ export function ReaderWorkspace({ primary, secondary, messages, locale }: Reader
   const [secondaryPage, setSecondaryPage] = useState(1);
   const [hasSecondary, setHasSecondary] = useState(secondary !== null);
   const [isSynced, setIsSynced] = useState(false);
+  const [focusedPane, setFocusedPane] = useState<'primary' | 'secondary'>('primary');
 
   const changePrimaryPage = useCallback(
     (page: number) => {
@@ -85,6 +86,8 @@ export function ReaderWorkspace({ primary, secondary, messages, locale }: Reader
           initialFilePath={primary.filePath}
           pageNumber={primaryPage}
           messages={messages}
+          isFocused={focusedPane === 'primary'}
+          onFocus={() => setFocusedPane('primary')}
           onPageChange={changePrimaryPage}
         />
 
@@ -94,6 +97,8 @@ export function ReaderWorkspace({ primary, secondary, messages, locale }: Reader
             initialFilePath={secondary.filePath}
             pageNumber={secondaryPage}
             messages={messages}
+            isFocused={focusedPane === 'secondary'}
+            onFocus={() => setFocusedPane('secondary')}
             onPageChange={changeSecondaryPage}
             onClose={() => setHasSecondary(false)}
           />

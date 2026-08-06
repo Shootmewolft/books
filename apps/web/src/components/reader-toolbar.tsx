@@ -9,11 +9,14 @@ interface ReaderToolbarProps {
   title: string;
   pageNumber: number;
   pageCount: number;
+  scale: number;
   files: readonly BookFile[];
   activeFilePath: string;
   messages: Messages;
   onPageChange: (page: number) => void;
-  onScaleChange: (delta: number) => void;
+  onZoomIn: () => void;
+  onZoomOut: () => void;
+  onFitWidth: () => void;
   onFileChange: (path: string) => void;
   onClose?: () => void;
 }
@@ -22,11 +25,14 @@ export function ReaderToolbar({
   title,
   pageNumber,
   pageCount,
+  scale,
   files,
   activeFilePath,
   messages,
   onPageChange,
-  onScaleChange,
+  onZoomIn,
+  onZoomOut,
+  onFitWidth,
   onFileChange,
   onClose,
 }: ReaderToolbarProps) {
@@ -47,8 +53,23 @@ export function ReaderToolbar({
           ‹
         </IconButton>
 
-        <span className="font-mono text-micro text-paper-dim tabular-nums">
-          {pageNumber} / {pageCount || '—'}
+        <label className="sr-only" htmlFor={`page-${activeFilePath}`}>
+          {messages.reader.page}
+        </label>
+        <input
+          id={`page-${activeFilePath}`}
+          type="number"
+          min={1}
+          max={pageCount > 0 ? pageCount : 1}
+          value={pageNumber}
+          onChange={(event) => {
+            const next = Number(event.target.value);
+            if (!Number.isNaN(next)) onPageChange(next);
+          }}
+          className="w-12 rounded-card border border-edge bg-void px-1.5 py-0.5 text-center font-mono text-micro text-paper tabular-nums focus:border-brass-dim focus:outline-none"
+        />
+        <span className="font-mono text-micro text-paper-faint tabular-nums">
+          {messages.reader.of} {pageCount > 0 ? pageCount : '—'}
         </span>
 
         <IconButton
@@ -61,11 +82,17 @@ export function ReaderToolbar({
       </div>
 
       <div className="flex items-center gap-1.5">
-        <IconButton label={messages.reader.zoomOut} onClick={() => onScaleChange(-0.2)}>
+        <IconButton label={messages.reader.zoomOut} onClick={onZoomOut}>
           −
         </IconButton>
-        <IconButton label={messages.reader.zoomIn} onClick={() => onScaleChange(0.2)}>
+        <span className="w-11 text-center font-mono text-micro text-paper-dim tabular-nums">
+          {Math.round(scale * 100)}%
+        </span>
+        <IconButton label={messages.reader.zoomIn} onClick={onZoomIn}>
           +
+        </IconButton>
+        <IconButton label={messages.reader.fitWidth} onClick={onFitWidth}>
+          ⇔
         </IconButton>
       </div>
 

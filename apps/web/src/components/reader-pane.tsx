@@ -1,23 +1,28 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { PdfCanvas } from '@/components/pdf-canvas';
+import { HighlightPicker } from '@/components/highlight-picker';
+import { PdfPage } from '@/components/pdf-page';
 import { ReaderToolbar } from '@/components/reader-toolbar';
+import { useHighlights } from '@/hooks/use-highlights';
 import { usePdfDocument } from '@/hooks/use-pdf-document';
+import { useReaderShortcuts } from '@/hooks/use-reader-shortcuts';
+import { useTextSelection } from '@/hooks/use-text-selection';
 import type { Messages } from '@/i18n/types';
 import type { CatalogueBook } from '@/modules/catalogue/types';
+import { DEFAULT_ZOOM, PAGE_HORIZONTAL_PADDING_PX } from '@/modules/reader/constants/zoom';
 import { fileUrl } from '@/modules/reader/domain/file-url';
-
-const MIN_SCALE = 0.4;
-const MAX_SCALE = 3;
-const DEFAULT_SCALE = 1.1;
+import type { HighlightColor } from '@/modules/reader/domain/highlight';
+import { nextZoomLevel } from '@/modules/reader/domain/next-zoom-level';
 
 interface ReaderPaneProps {
   book: CatalogueBook;
   initialFilePath: string;
   pageNumber: number;
   messages: Messages;
+  isFocused: boolean;
+  onFocus: () => void;
   onPageChange: (page: number) => void;
   onClose?: () => void;
 }
@@ -27,42 +32,85 @@ export function ReaderPane({
   initialFilePath,
   pageNumber,
   messages,
+  isFocused,
+  onFocus,
   onPageChange,
   onClose,
 }: ReaderPaneProps) {
   const [filePath, setFilePath] = useState(initialFilePath);
-  const [scale, setScale] = useState(DEFAULT_SCALE);
+  const [scale, setScale] = useState(DEFAULT_ZOOM);
 
-  const { document, pageCount, status } = usePdfDocument(fileUrl(`${book.path}/${filePath}`));
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const { document: pdf, pageCount, status } = usePdfDocument(fileUrl(`${book.path}/${filePath}`));
+  const { highlights, addHighlight, removeHighlight } = useHighlights(book.path, filePath);
+  const { selection, clear } = useTextSelection(scrollRef);
+
+  const clampPage = useCallback(
+    (page: number) => {
+      if (page < 1) return 1;
+      if (pageCount > 0 && page > pageCount) return pageCount;
+      return page;
+    },
+    [pageCount],
+  );
 
   useEffect(() => {
     if (pageCount > 0 && pageNumber > pageCount) onPageChange(pageCount);
   }, [pageCount, pageNumber, onPageChange]);
 
-  const clampPage = (page: number) => {
-    if (page < 1) return 1;
-    if (pageCount > 0 && page > pageCount) return pageCount;
-    return page;
+  const fitWidth = useCallback(async () => {
+    if (pdf === null || scrollRef.current === null) return;
+    const page = await pdf.getPage(pageNumber);
+    const base = page.getViewport({ scale: 1 });
+    const available = scrollRef.current.clientWidth - PAGE_HORIZONTAL_PADDING_PX;
+    if (available > 0) setScale(available / base.width);
+  }, [pdf, pageNumber]);
+
+  useReaderShortcuts({
+    enabled: isFocused && status === 'ready',
+    onPreviousPage: () => onPageChange(clampPage(pageNumber - 1)),
+    onNextPage: () => onPageChange(clampPage(pageNumber + 1)),
+    onFirstPage: () => onPageChange(1),
+    onLastPage: () => onPageChange(pageCount > 0 ? pageCount : 1),
+    onZoomIn: () => setScale((current) => nextZoomLevel(current, 1)),
+    onZoomOut: () => setScale((current) => nextZoomLevel(current, -1)),
+    onResetZoom: () => setScale(DEFAULT_ZOOM),
+    onFitWidth: () => void fitWidth(),
+  });
+
+  const applyHighlight = (color: HighlightColor) => {
+    if (selection === null) return;
+    addHighlight({ page: pageNumber, color, text: selection.text, rects: selection.rects });
+    clear();
   };
 
+  const pageHighlights = highlights.filter((entry) => entry.page === pageNumber);
+
   return (
-    <section className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-card border border-edge bg-void">
+    <section
+      onFocusCapture={onFocus}
+      onMouseDown={onFocus}
+      className={`flex min-h-0 flex-1 flex-col overflow-hidden rounded-card border bg-void transition-colors ${
+        isFocused ? 'border-brass-dim' : 'border-edge'
+      }`}
+    >
       <ReaderToolbar
         title={book.title}
         pageNumber={pageNumber}
         pageCount={pageCount}
+        scale={scale}
         files={book.files}
         activeFilePath={filePath}
         messages={messages}
         onPageChange={(page) => onPageChange(clampPage(page))}
-        onScaleChange={(delta) =>
-          setScale((current) => Math.min(MAX_SCALE, Math.max(MIN_SCALE, current + delta)))
-        }
+        onZoomIn={() => setScale((current) => nextZoomLevel(current, 1))}
+        onZoomOut={() => setScale((current) => nextZoomLevel(current, -1))}
+        onFitWidth={() => void fitWidth()}
         onFileChange={setFilePath}
         {...(onClose === undefined ? {} : { onClose })}
       />
 
-      <div className="min-h-0 flex-1 overflow-auto bg-deep p-4">
+      <div ref={scrollRef} className="min-h-0 flex-1 overflow-auto bg-deep p-4">
         {status === 'loading' && (
           <p className="py-16 text-center text-paper-faint text-small">{messages.reader.loading}</p>
         )}
@@ -82,9 +130,24 @@ export function ReaderPane({
         )}
 
         {status === 'ready' && (
-          <PdfCanvas document={document} pageNumber={pageNumber} scale={scale} />
+          <PdfPage
+            document={pdf}
+            pageNumber={pageNumber}
+            scale={scale}
+            highlights={pageHighlights}
+            onRemoveHighlight={removeHighlight}
+            removeLabel={messages.reader.removeHighlight}
+          />
         )}
       </div>
+
+      {selection !== null && (
+        <HighlightPicker
+          position={selection.anchor}
+          label={messages.reader.highlight}
+          onPick={applyHighlight}
+        />
+      )}
     </section>
   );
 }

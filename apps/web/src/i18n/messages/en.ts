@@ -74,6 +74,8 @@ export const en = {
     failed: 'This file could not be displayed.',
     failedHint: 'Download it instead — the file itself is fine.',
     epubNotice: 'EPUB files download rather than open in the reader.',
+    highlight: 'Highlight',
+    removeHighlight: 'Remove highlight',
   },
   footer: {
     builtBy: 'Built by',

@@ -205,3 +205,38 @@ body {
     transform: none;
   }
 }
+
+.textLayer {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  line-height: 1;
+  text-align: initial;
+  text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  caret-color: var(--color-paper);
+  z-index: 2;
+}
+
+.textLayer :is(span, br) {
+  position: absolute;
+  color: transparent;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0 0;
+  margin: 0;
+}
+
+.textLayer span.markedContent {
+  top: 0;
+  height: 0;
+}
+
+.textLayer ::selection {
+  background: color-mix(in oklab, var(--color-brass) 45%, transparent);
+}
+
+.textLayer br::selection {
+  background: transparent;
+}

@@ -21,7 +21,7 @@ export function BookCover({ book, className = '' }: BookCoverProps) {
     // biome-ignore lint/performance/noImgElement: pre-sized at extraction, served locally
     <img
       src={book.cover}
-      alt=""
+      alt={book.slug}
       loading="lazy"
       decoding="async"
       className={`h-full w-full object-cover ${className}`}

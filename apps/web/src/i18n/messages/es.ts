@@ -76,8 +76,9 @@ export const es: Messages = {
     loading: 'Cargando…',
     failed: 'No se pudo mostrar este archivo.',
     failedHint: 'Descárgalo en su lugar: el archivo está bien.',
-    epubNotice:
-      'Los archivos EPUB se descargan en lugar de abrirse en el lector.',
+    epubNotice: 'Los archivos EPUB se descargan en lugar de abrirse en el lector.',
+    highlight: 'Resaltar',
+    removeHighlight: 'Quitar resaltado',
   },
   footer: {
     builtBy: 'Hecho por',
@@ -94,7 +95,6 @@ export const es: Messages = {
   },
   error: {
     notFound: 'Ese libro no está aquí',
-    notFoundHint:
-      'Puede que se haya renombrado, o retirado a petición de un titular de derechos.',
+    notFoundHint: 'Puede que se haya renombrado, o retirado a petición de un titular de derechos.',
   },
 };
