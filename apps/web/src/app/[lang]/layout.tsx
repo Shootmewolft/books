@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, IBM_Plex_Mono, Instrument_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
@@ -119,6 +120,8 @@ export default async function LocaleLayout(props: LocaleLayoutProps) {
           </main>
           <SiteFooter locale={lang} />
         </div>
+
+        <Analytics />
       </body>
     </html>
   );
