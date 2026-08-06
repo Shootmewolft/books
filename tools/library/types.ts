@@ -38,6 +38,7 @@ export interface Book {
   edition: number | null;
   publisher: string | null;
   pages: number | null;
+  cover?: string | null;
   isbn13?: string | null;
   kind: Kind;
   category: string;

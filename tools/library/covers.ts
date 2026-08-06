@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { execFile } from 'node:child_process';
-import { access, readFile, rename, rm } from 'node:fs/promises';
+import { access, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { promisify } from 'node:util';
 
@@ -69,22 +69,34 @@ async function main(): Promise<void> {
     const relativeDirectory = relative(ROOT, directory);
     const book = JSON.parse(await readFile(join(directory, 'book.json'), 'utf8')) as Book;
 
-    const hasCover =
-      (await exists(join(directory, 'cover.webp'))) || (await exists(join(directory, 'cover.jpg')));
+    const declareCover = async (name: string | null) => {
+      if (book.cover === name) return;
+      book.cover = name;
+      await writeFile(join(directory, 'book.json'), `${JSON.stringify(book, null, 2)}\n`, 'utf8');
+    };
 
-    if (!force && hasCover) {
+    const existing = (await exists(join(directory, 'cover.webp')))
+      ? 'cover.webp'
+      : (await exists(join(directory, 'cover.jpg')))
+        ? 'cover.jpg'
+        : null;
+
+    if (!force && existing !== null) {
+      await declareCover(existing);
       skipped += 1;
       continue;
     }
 
     const pdf = book.files.find((file) => file.format === 'pdf');
     if (pdf === undefined) {
+      await declareCover(null);
       failures.push({ where: relativeDirectory, message: 'no PDF (EPUB-only book)' });
       continue;
     }
 
     try {
       await extractCover(directory, join(directory, pdf.path));
+      await declareCover('cover.webp');
       created += 1;
     } catch (cause) {
       failures.push({

@@ -13,7 +13,7 @@ export async function getCatalogue(): Promise<Catalogue> {
   const entries = await Promise.all(directories.map(readBookDirectory));
 
   const countPerSubcategory = new Map<string, number>();
-  const books: CatalogueBook[] = entries.map(({ book, path, coverFile }) => {
+  const books: CatalogueBook[] = entries.map(({ book, path }) => {
     const subcategoryKey = `${book.category}/${book.subcategory}`;
     const positionInSubcategory = countPerSubcategory.get(subcategoryKey) ?? 0;
     countPerSubcategory.set(subcategoryKey, positionInSubcategory + 1);
@@ -22,7 +22,8 @@ export async function getCatalogue(): Promise<Catalogue> {
       ...book,
       path,
       callNumber: toCallNumber(book, positionInSubcategory),
-      cover: coverFile === undefined ? null : `/api/file/${path}/${coverFile}`,
+      cover:
+        book.cover === undefined || book.cover === null ? null : `/api/file/${path}/${book.cover}`,
       languages: uniqueSorted(book.files.map((file) => file.lang)),
       formats: uniqueSorted(book.files.map((file) => file.format)),
       totalBytes: book.files.reduce((sum, file) => sum + file.bytes, 0),

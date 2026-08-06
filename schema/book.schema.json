@@ -28,7 +28,10 @@
     },
     "authors": {
       "type": "array",
-      "items": { "type": "string", "minLength": 2 },
+      "items": {
+        "type": "string",
+        "minLength": 2
+      },
       "description": "Empty is allowed for anonymous vendor whitepapers, but discouraged."
     },
     "year": {
@@ -67,7 +70,9 @@
     },
     "tags": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "uniqueItems": true,
       "description": "Cross-cutting labels validated against the vocabulary in tools/library/taxonomy.mjs."
     },
@@ -80,8 +85,14 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "publisher": { "type": "string", "format": "uri" },
-        "openlibrary": { "type": "string", "format": "uri" }
+        "publisher": {
+          "type": "string",
+          "format": "uri"
+        },
+        "openlibrary": {
+          "type": "string",
+          "format": "uri"
+        }
       },
       "description": "Where to legitimately buy or borrow the book."
     },
@@ -98,16 +109,29 @@
             "enum": ["en", "es"],
             "description": "Same work in another language belongs here, not in a separate book."
           },
-          "format": { "enum": ["pdf", "epub"] },
+          "format": {
+            "enum": ["pdf", "epub"]
+          },
           "path": {
             "type": "string",
             "pattern": "^[a-z]{2}\\.(pdf|epub)$",
             "description": "Filename relative to the book directory. Always {lang}.{format}."
           },
-          "bytes": { "type": "integer", "minimum": 1 },
-          "md5": { "type": "string", "pattern": "^[a-f0-9]{32}$" }
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "md5": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          }
         }
       }
+    },
+    "cover": {
+      "type": ["string", "null"],
+      "pattern": "^cover\\.(webp|jpg)$",
+      "description": "Cover filename relative to the book directory, or null. Declared rather than detected, because the image is not in git."
     }
   }
 }
