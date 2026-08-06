@@ -62,6 +62,10 @@ scoped to the `library` bucket only.
 
 ### 4. Configure `.env`
 
+The file goes at the **repository root**, next to `package.json` — not in
+`apps/web`. `pnpm library:upload` loads it with Node's `--env-file-if-exists`,
+which resolves relative to where pnpm runs, so run the command from the root.
+
 ```bash
 cp .env.example .env
 ```
@@ -82,6 +86,11 @@ R2_BUCKET=library
 The `R2_*` values are used **only** by `pnpm library:upload`, which runs from
 your machine. They never go to Vercel — the deployed site only redirects to
 public URLs and never calls the R2 API.
+
+Note that the reader does not read this file. Next loads env files from
+`apps/web`, not from the root, and it does not need to: locally every variable
+has a working default (`LIBRARY_CDN_URL` unset means serve from disk), and in
+production Vercel supplies them. The root `.env` exists for the tooling.
 
 ### 5. Upload the library
 

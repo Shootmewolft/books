@@ -29,7 +29,15 @@ const REQUIRED_ENV = ['R2_ACCOUNT_ID', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY
 function requireEnv(name: string): string {
   const value = process.env[name];
   if (value === undefined || value === '') {
-    console.error(`\n  Missing ${name}.\n  Required: ${REQUIRED_ENV.join(', ')}\n`);
+    const missing = REQUIRED_ENV.filter((key) => {
+      const current = process.env[key];
+      return current === undefined || current === '';
+    });
+
+    console.error(`\n  Missing: ${missing.join(', ')}`);
+    console.error(`  Looked for them in the environment and in ${join(ROOT, '.env')}`);
+    console.error('\n  The .env must sit at the repository root, not in apps/web.');
+    console.error('  Run this from the root: pnpm library:upload\n');
     process.exit(1);
   }
   return value;
