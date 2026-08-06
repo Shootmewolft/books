@@ -22,8 +22,9 @@ const CONTENT_TYPES: Record<string, string> = {
 };
 
 const ONE_YEAR_IMMUTABLE = 'public, max-age=31536000, immutable';
-const MULTIPART_THRESHOLD_BYTES = 8 * 1024 * 1024;
-const REQUIRED_ENV = ['AWS_REGION', 'AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'S3_BUCKET'];
+const PART_SIZE_BYTES = 8 * 1024 * 1024;
+const CONCURRENT_PARTS = 4;
+const REQUIRED_ENV = ['R2_ACCOUNT_ID', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY', 'R2_BUCKET'];
 
 function requireEnv(name: string): string {
   const value = process.env[name];
@@ -61,13 +62,15 @@ async function objectMatches(
 }
 
 async function main(): Promise<void> {
-  const bucket = requireEnv('S3_BUCKET');
+  const accountId = requireEnv('R2_ACCOUNT_ID');
+  const bucket = requireEnv('R2_BUCKET');
 
   const client = new S3Client({
-    region: requireEnv('AWS_REGION'),
+    region: 'auto',
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
     credentials: {
-      accessKeyId: requireEnv('AWS_ACCESS_KEY_ID'),
-      secretAccessKey: requireEnv('AWS_SECRET_ACCESS_KEY'),
+      accessKeyId: requireEnv('R2_ACCESS_KEY_ID'),
+      secretAccessKey: requireEnv('R2_SECRET_ACCESS_KEY'),
     },
   });
 
@@ -96,8 +99,8 @@ async function main(): Promise<void> {
         ContentType: CONTENT_TYPES[extname(file).toLowerCase()] ?? 'application/octet-stream',
         CacheControl: ONE_YEAR_IMMUTABLE,
       },
-      partSize: MULTIPART_THRESHOLD_BYTES,
-      queueSize: 4,
+      partSize: PART_SIZE_BYTES,
+      queueSize: CONCURRENT_PARTS,
     });
 
     await transfer.done();

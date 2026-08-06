@@ -1,6 +1,6 @@
 # Deployment
 
-The site runs on Vercel. The books do not — they live in S3.
+The site runs on Vercel. The books live in Cloudflare R2.
 
 ## Why they are separate
 
@@ -14,56 +14,29 @@ that data is baked in at build time, but every cover, every download and the
 reader itself would return 404, because `/api/file/*` reads a `library/`
 directory that does not exist inside a serverless function.
 
----
-
-## Cost, stated plainly
-
-S3 charges for egress: roughly **$0.09 per GB** transferred out. Storing 1.5 GB
-costs about $0.035/month, which is nothing. The transfer is the variable.
-
-| Scenario | Rough monthly egress cost |
-|---|---|
-| Personal use, a few reads | under $0.10 |
-| 100 downloads of a 10 MB book | ~$0.09 |
-| 1000 book downloads averaging 10 MB | ~$0.90 |
-| A post that gets traction, 100 GB | ~$9 |
-
-Putting **CloudFront in front of S3 is worth it**, and not only for cost:
-CloudFront's free tier covers 1 TB/month of egress, caches at the edge so
-repeat reads never touch S3, and gives far better latency for a PDF reader
-issuing many range requests. Direct S3 access works, but every byte is billed
-and served from a single region.
+R2 rather than S3 for one reason: **egress is free**. Storing 1.5 GB costs
+roughly the same on both (cents per month), but S3 bills about $0.09 per GB
+transferred out. For a library people actually download, the transfer is the
+entire cost, and on R2 it is zero.
 
 ---
 
 ## One-time setup
 
-### 1. Make the bucket readable
+### 1. Create the bucket
 
-The reader fetches files straight from the bucket URL, so the objects must be
-publicly readable.
+**Cloudflare dashboard → R2 → Create bucket**, named `library`.
 
-**S3 → your bucket → Permissions**:
+### 2. Make it publicly readable
 
-- Turn off *Block all public access*
-- Add this bucket policy, replacing `YOUR-BUCKET`:
+**Bucket → Settings → Public access.** Two options:
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadForLibrary",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::YOUR-BUCKET/*"
-    }
-  ]
-}
-```
+- **Custom domain** (recommended): connect `books.your-domain.com`. Needs the
+  domain on Cloudflare. Gives a stable URL and no rate limiting.
+- **r2.dev subdomain**: works immediately, but it is rate-limited and
+  explicitly not meant for production traffic.
 
-Also add a CORS rule, or the PDF reader cannot issue range requests
+Then add a CORS policy, or the reader cannot issue range requests
 cross-origin:
 
 ```json
@@ -78,68 +51,53 @@ cross-origin:
 ]
 ```
 
-`ExposeHeaders` matters. Without `Content-Range` and `Accept-Ranges` visible to
-the browser, pdf.js falls back to downloading the whole file.
+`ExposeHeaders` is load bearing. Without `Content-Range` and `Accept-Ranges`
+visible to the browser, pdf.js cannot use range requests and downloads whole
+files instead of single pages.
 
-### 2. Create an IAM user for uploads
+### 3. Create an API token
 
-An access key scoped to this bucket only. Minimum policy:
+**R2 → Manage API Tokens → Create token**, permission *Object Read & Write*,
+scoped to the `library` bucket only.
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": ["s3:PutObject", "s3:GetObject", "s3:HeadObject", "s3:ListBucket"],
-      "Resource": [
-        "arn:aws:s3:::YOUR-BUCKET",
-        "arn:aws:s3:::YOUR-BUCKET/*"
-      ]
-    }
-  ]
-}
-```
-
-### 3. Configure `.env`
+### 4. Configure `.env`
 
 ```bash
 cp .env.example .env
 ```
 
-Replace the contents with:
-
 ```
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 
-# S3 direct:  https://YOUR-BUCKET.s3.YOUR-REGION.amazonaws.com
-# CloudFront: https://books.your-domain.com
+# Custom domain:  https://books.your-domain.com
+# r2.dev:         https://pub-<hash>.r2.dev
 LIBRARY_CDN_URL=
 
-AWS_REGION=
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-S3_BUCKET=
+R2_ACCOUNT_ID=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
+R2_BUCKET=library
 ```
 
-The `AWS_*` values are used **only** by `pnpm library:upload`, which runs from
+The `R2_*` values are used **only** by `pnpm library:upload`, which runs from
 your machine. They never go to Vercel — the deployed site only redirects to
-public URLs and never calls the AWS API.
+public URLs and never calls the R2 API.
 
-### 4. Upload the library
+### 5. Upload the library
 
 ```bash
 pnpm library:upload
 ```
 
-About 1.5 GB across 158 files plus covers. Uses multipart upload for anything
-over 8 MB, and skips objects already present at the same size, so it is safe to
-re-run after adding a book. `--force` overwrites.
+About 1.5 GB across 158 files plus covers. Multipart upload above 8 MB, four
+parts in flight. Objects already present at the same size are skipped, so it is
+safe to re-run after adding a book. `--force` overwrites.
 
-### 5. Purge the binaries from git history
+### 6. Purge the binaries from git history
 
 `.gitignore` only stops *future* commits. The 1.27 GB is already in history and
-every clone still pays for it, Vercel's included.
+every clone still pays for it, Vercel's included. This is the step that
+actually fixes the `ENOSPC`.
 
 **This rewrites history and needs a force push. Back up first.**
 
@@ -168,17 +126,17 @@ ls library/architecture/fundamentals/clean-architecture/   # files still on disk
 `git filter-repo` only rewrites history. The book files stay in your working
 directory; they are simply no longer tracked.
 
-### 6. Configure Vercel
+### 7. Configure Vercel
 
 **Project → Settings → Environment Variables**:
 
 | Variable | Value |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | `https://your-domain.com` |
-| `LIBRARY_CDN_URL` | your bucket or CloudFront URL |
+| `LIBRARY_CDN_URL` | your R2 public URL |
 
-`LIBRARY_CDN_URL` is what flips the file route from reading disk to redirecting.
-Without it, a deployed build returns 404 for every file.
+`LIBRARY_CDN_URL` is what flips the file route from reading disk to
+redirecting. Without it, a deployed build returns 404 for every file.
 
 ---
 
@@ -187,15 +145,15 @@ Without it, a deployed build returns 404 for every file.
 ```
 browser → /api/file/architecture/fundamentals/clean-architecture/en.pdf
         → 308 redirect
-        → https://<bucket-or-cloudfront>/architecture/fundamentals/.../en.pdf
+        → https://books.your-domain.com/architecture/fundamentals/.../en.pdf
 ```
 
 The redirect is deliberate. Proxying the bytes through the route handler would
-bill every megabyte as Vercel bandwidth on top of the S3 egress. Redirecting
-means the file travels once, from the bucket to the reader.
+bill every megabyte as Vercel bandwidth. Redirecting means the file goes
+straight from R2 to the reader, and R2 charges nothing for egress.
 
 Range requests survive the redirect: the browser follows it and negotiates
-ranges with S3 directly, which is what lets the reader open page 1 of a 74 MB
+ranges with R2 directly, which is what lets the reader open page 1 of a 74 MB
 PDF without fetching the rest. This is why the CORS `ExposeHeaders` above are
 not optional.
 
@@ -216,7 +174,7 @@ git add library tools README.md && git commit -m "feat(library): add ..."
 git push
 ```
 
-Only metadata reaches git. The binary goes to S3.
+Only metadata reaches git. The binary goes to R2.
 
 ---
 
