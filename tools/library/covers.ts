@@ -1,17 +1,22 @@
 #!/usr/bin/env node
 
 import { execFile } from 'node:child_process';
-import { access, readdir, readFile, rename, rm } from 'node:fs/promises';
+import { access, readFile, rename, rm } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { promisify } from 'node:util';
+
+import { findBookDirectories } from './find-book-directories.ts';
+import type { Book, Finding } from './types.ts';
 
 const run = promisify(execFile);
 const ROOT = process.cwd();
 const LIBRARY = join(ROOT, 'library');
 
 const COVER_WIDTH = 480;
+const JPEG_QUALITY = 82;
+const WEBP_QUALITY = 80;
 
-async function exists(path) {
+async function exists(path: string): Promise<boolean> {
   try {
     await access(path);
     return true;
@@ -20,26 +25,13 @@ async function exists(path) {
   }
 }
 
-async function findBookDirectories(directory) {
-  const entries = await readdir(directory, { withFileTypes: true });
-  if (entries.some((entry) => entry.isFile() && entry.name === 'book.json')) return [directory];
-
-  const found = [];
-  for (const entry of entries) {
-    if (entry.isDirectory()) {
-      found.push(...(await findBookDirectories(join(directory, entry.name))));
-    }
-  }
-  return found;
-}
-
-async function extractCover(directory, pdfPath) {
+async function extractCover(directory: string, pdfPath: string): Promise<void> {
   const stem = join(directory, 'cover');
 
   await run('pdftocairo', [
     '-jpeg',
     '-jpegopt',
-    'quality=82',
+    `quality=${JPEG_QUALITY}`,
     '-f',
     '1',
     '-l',
@@ -58,39 +50,36 @@ async function extractCover(directory, pdfPath) {
 
   try {
     const { default: sharp } = await import('sharp');
-    await sharp(jpeg).webp({ quality: 80 }).toFile(`${stem}.webp`);
+    await sharp(jpeg).webp({ quality: WEBP_QUALITY }).toFile(`${stem}.webp`);
     await rm(jpeg);
-    return 'webp';
   } catch {
     await rename(jpeg, `${stem}.jpg`);
-    return 'jpg';
   }
 }
 
-async function main() {
+async function main(): Promise<void> {
   const force = process.argv.includes('--force');
   const directories = await findBookDirectories(LIBRARY);
 
   let created = 0;
   let skipped = 0;
-  const failures = [];
+  const failures: Finding[] = [];
 
   for (const directory of directories) {
     const relativeDirectory = relative(ROOT, directory);
-    const book = JSON.parse(await readFile(join(directory, 'book.json'), 'utf8'));
+    const book = JSON.parse(await readFile(join(directory, 'book.json'), 'utf8')) as Book;
 
-    if (
-      !force &&
-      ((await exists(join(directory, 'cover.webp'))) ||
-        (await exists(join(directory, 'cover.jpg'))))
-    ) {
+    const hasCover =
+      (await exists(join(directory, 'cover.webp'))) || (await exists(join(directory, 'cover.jpg')));
+
+    if (!force && hasCover) {
       skipped += 1;
       continue;
     }
 
     const pdf = book.files.find((file) => file.format === 'pdf');
-    if (!pdf) {
-      failures.push({ where: relativeDirectory, reason: 'no PDF (EPUB-only book)' });
+    if (pdf === undefined) {
+      failures.push({ where: relativeDirectory, message: 'no PDF (EPUB-only book)' });
       continue;
     }
 
@@ -98,18 +87,22 @@ async function main() {
       await extractCover(directory, join(directory, pdf.path));
       created += 1;
     } catch (cause) {
-      failures.push({ where: relativeDirectory, reason: cause.message.split('\n')[0] });
+      failures.push({
+        where: relativeDirectory,
+        message: (cause as Error).message.split('\n')[0] ?? 'unknown error',
+      });
     }
   }
 
   console.info(`Covers created: ${created}   skipped (already present): ${skipped}`);
+
   if (failures.length > 0) {
     console.info(`\n${failures.length} without a cover:`);
-    for (const { where, reason } of failures) console.info(`  ${where} — ${reason}`);
+    for (const { where, message } of failures) console.info(`  ${where} — ${message}`);
   }
 }
 
-main().catch((cause) => {
+main().catch((cause: unknown) => {
   console.error(cause);
   process.exit(1);
 });

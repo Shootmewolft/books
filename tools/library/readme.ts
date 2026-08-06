@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
-import { TAXONOMY } from './taxonomy.mjs';
+import { findBookDirectories } from './find-book-directories.ts';
+import { TAXONOMY } from './taxonomy.ts';
+import type { Book, Kind } from './types.ts';
 
 const ROOT = process.cwd();
 const LIBRARY = join(ROOT, 'library');
@@ -11,27 +13,17 @@ const GITHUB_USER = 'shootmewolft';
 const REPO = 'books';
 const SITE_NAME = 'La Biblioteca del Software';
 
-async function walk(directory) {
-  const entries = await readdir(directory, { withFileTypes: true });
-  if (entries.some((entry) => entry.isFile() && entry.name === 'book.json')) return [directory];
-  const found = [];
-  for (const entry of entries) {
-    if (entry.isDirectory()) found.push(...(await walk(join(directory, entry.name))));
-  }
-  return found;
-}
-
-function repoLink(directory) {
+function repoLink(directory: string): string {
   return relative(ROOT, directory).split('/').map(encodeURIComponent).join('/');
 }
 
-function formatAuthors(authors) {
+function formatAuthors(authors: string[]): string {
   if (!authors || authors.length === 0) return '—';
   if (authors.length <= 2) return authors.join(' & ');
   return `${authors[0]} et al.`;
 }
 
-function bookRow(book, directory) {
+function bookRow(book: Book, directory: string): string {
   const link = repoLink(directory);
   const title = book.subtitle ? `${book.title}` : book.title;
   const edition = book.edition && book.edition > 1 ? ` *(${book.edition}e)*` : '';
@@ -44,13 +36,13 @@ function bookRow(book, directory) {
   } | ${formats} | ${languages} |`;
 }
 
-async function build() {
-  const directories = await walk(LIBRARY);
-  const books = [];
+async function build(): Promise<string> {
+  const directories = await findBookDirectories(LIBRARY);
+  const books: Array<{ directory: string; data: Book }> = [];
   for (const directory of directories) {
     books.push({
       directory,
-      data: JSON.parse(await readFile(join(directory, 'book.json'), 'utf8')),
+      data: JSON.parse(await readFile(join(directory, 'book.json'), 'utf8')) as Book,
     });
   }
 
@@ -59,12 +51,10 @@ async function build() {
     (sum, book) => sum + book.data.files.reduce((inner, file) => inner + file.bytes, 0),
     0,
   );
-  const kinds = books.reduce((acc, book) => {
-    acc[book.data.kind] = (acc[book.data.kind] ?? 0) + 1;
-    return acc;
-  }, {});
+  const kinds: Record<Kind, number> = { book: 0, guide: 0, reference: 0 };
+  for (const entry of books) kinds[entry.data.kind] += 1;
 
-  const lines = [];
+  const lines: string[] = [];
 
   lines.push('<div align="center">');
   lines.push('');
@@ -130,9 +120,7 @@ async function build() {
   lines.push('copied three times.');
   lines.push('');
   lines.push(
-    `Content shapes: \`book\` (${kinds.book ?? 0}) · \`guide\` (${kinds.guide ?? 0}) · \`reference\` (${
-      kinds.reference ?? 0
-    }).`,
+    `Content shapes: \`book\` (${kinds.book}) · \`guide\` (${kinds.guide}) · \`reference\` (${kinds.reference}).`,
   );
   lines.push('');
   lines.push('---');
@@ -213,7 +201,7 @@ async function build() {
   return lines.join('\n');
 }
 
-async function main() {
+async function main(): Promise<void> {
   const content = await build();
   const target = join(ROOT, 'README.md');
 
@@ -231,7 +219,7 @@ async function main() {
   console.info('Wrote README.md');
 }
 
-main().catch((cause) => {
+main().catch((cause: unknown) => {
   console.error(cause);
   process.exit(1);
 });

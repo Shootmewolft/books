@@ -38,7 +38,7 @@ body:
     id: category
     attributes:
       label: Proposed category / subcategory
-      description: Must exist in tools/library/taxonomy.mjs, or say which one to add
+      description: Must exist in tools/library/taxonomy.ts, or say which one to add
       placeholder: architecture/domain-driven-design
     validations:
       required: true

@@ -33,6 +33,9 @@ jobs:
       - name: Biome
         run: pnpm lint
 
+      - name: Typecheck
+        run: pnpm typecheck
+
       - name: Build reader
         run: pnpm build
 
@@ -62,7 +65,7 @@ jobs:
       # the README starts lying — which is exactly how the previous one ended up
       # advertising books that did not exist.
       - name: README is up to date
-        run: node tools/library/readme.mjs --check
+        run: node tools/library/readme.ts --check
 
   submission:
     name: Check book submission

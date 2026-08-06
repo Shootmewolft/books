@@ -11,9 +11,15 @@ importers:
       '@biomejs/biome':
         specifier: 2.5.7
         version: 2.5.7
+      '@types/node':
+        specifier: 26.1.2
+        version: 26.1.2
       sharp:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@26.1.2)
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
 
   apps/web:
     dependencies:

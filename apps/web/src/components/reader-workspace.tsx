@@ -62,7 +62,7 @@ export function ReaderWorkspace({ primary, secondary, messages, locale }: Reader
                 type="checkbox"
                 checked={isSynced}
                 onChange={(event) => setIsSynced(event.target.checked)}
-                className="size-3.5 accent-[var(--color-brass)]"
+                className="size-3.5 accent-(--color-brass)"
               />
               <span title={messages.reader.syncScrollHint}>{messages.reader.syncScroll}</span>
             </label>

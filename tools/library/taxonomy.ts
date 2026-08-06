@@ -1,17 +1,19 @@
-export const KINDS = /** @type {const} */ ({
+import type { Category, Format, Kind, Language } from './types.ts';
+
+export const KINDS: Record<Kind, string> = {
   book: 'A full-length published book.',
   guide: 'A short-form guide, booklet, or vendor whitepaper.',
   reference: 'A cheatsheet, poster, or single-diagram reference.',
-});
+};
 
-export const LANGUAGES = /** @type {const} */ ({
+export const LANGUAGES: Record<Language, string> = {
   en: 'English',
   es: 'Español',
-});
+};
 
-export const FORMATS = /** @type {const} */ (['pdf', 'epub']);
+export const FORMATS: readonly Format[] = ['pdf', 'epub'];
 
-export const TAXONOMY = [
+export const TAXONOMY: Category[] = [
   {
     slug: 'foundations',
     label: { en: 'Foundations', es: 'Fundamentos' },
@@ -182,15 +184,15 @@ export const TAXONOMY = [
   },
 ];
 
-export const VALID_PATHS = new Set(
+export const VALID_PATHS: Set<string> = new Set(
   TAXONOMY.flatMap((category) =>
     category.subcategories.map((sub) => `${category.slug}/${sub.slug}`),
   ),
 );
 
-export const CATEGORY_SLUGS = TAXONOMY.map((category) => category.slug);
+export const CATEGORY_SLUGS: string[] = TAXONOMY.map((category) => category.slug);
 
-export const TAGS = [
+export const TAGS: string[] = [
   'algorithms',
   'api',
   'aws',
@@ -243,12 +245,12 @@ export const TAGS = [
   'web-security',
 ];
 
-export const TAG_SET = new Set(TAGS);
+export const TAG_SET: Set<string> = new Set(TAGS);
 
-export function findCategory(slug) {
+export function findCategory(slug: string): Category | undefined {
   return TAXONOMY.find((category) => category.slug === slug);
 }
 
-export function findSubcategory(categorySlug, subcategorySlug) {
+export function findSubcategory(categorySlug: string, subcategorySlug: string) {
   return findCategory(categorySlug)?.subcategories.find((sub) => sub.slug === subcategorySlug);
 }
