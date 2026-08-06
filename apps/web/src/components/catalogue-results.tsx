@@ -36,6 +36,7 @@ export async function CatalogueResults({ searchParams, locale }: CatalogueResult
         <SearchField
           action={basePath}
           label={messages.filters.search}
+          submitLabel={messages.filters.submit}
           placeholder={messages.filters.searchPlaceholder}
           filters={filters}
         />

@@ -1,19 +1,28 @@
+import Form from 'next/form';
+
 import type { CatalogueFilters } from '@/lib/types';
 
 interface SearchFieldProps {
   action: string;
   placeholder: string;
   label: string;
+  submitLabel: string;
   filters: CatalogueFilters;
 }
 
-export function SearchField({ action, placeholder, label, filters }: SearchFieldProps) {
+export function SearchField({
+  action,
+  placeholder,
+  label,
+  submitLabel,
+  filters,
+}: SearchFieldProps) {
   const preserved = Object.entries(filters).filter(
     ([key, value]) => key !== 'query' && value !== undefined,
   );
 
   return (
-    <form action={action} method="get" role="search" className="relative">
+    <Form action={action} scroll={false} className="relative">
       {preserved.map(([key, value]) => (
         <input key={key} type="hidden" name={key} value={String(value)} />
       ))}
@@ -21,6 +30,7 @@ export function SearchField({ action, placeholder, label, filters }: SearchField
       <label htmlFor="catalogue-search" className="sr-only">
         {label}
       </label>
+
       <input
         id="catalogue-search"
         type="search"
@@ -28,8 +38,15 @@ export function SearchField({ action, placeholder, label, filters }: SearchField
         defaultValue={filters.query ?? ''}
         placeholder={placeholder}
         autoComplete="off"
-        className="w-full rounded-card border border-edge bg-deep px-4 py-3 text-paper placeholder:text-paper-faint focus:border-brass-dim focus:outline-none"
+        className="w-full rounded-card border border-edge bg-deep px-4 py-3 pr-24 text-paper placeholder:text-paper-faint focus:border-brass-dim focus:outline-none"
       />
-    </form>
+
+      <button
+        type="submit"
+        className="-translate-y-1/2 absolute top-1/2 right-2 rounded-card px-3 py-1.5 font-mono text-micro text-paper-faint uppercase tracking-[0.12em] transition-colors hover:text-brass"
+      >
+        {submitLabel}
+      </button>
+    </Form>
   );
 }

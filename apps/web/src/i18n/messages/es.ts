@@ -26,6 +26,7 @@ export const es: Messages = {
   },
   filters: {
     search: 'Buscar',
+    submit: 'Buscar',
     searchPlaceholder: 'Título, autor, editorial, etiqueta…',
     category: 'Categoría',
     subcategory: 'Subcategoría',

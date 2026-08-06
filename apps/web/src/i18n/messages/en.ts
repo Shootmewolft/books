@@ -23,6 +23,7 @@ export const en = {
   },
   filters: {
     search: 'Search',
+    submit: 'Search',
     searchPlaceholder: 'Title, author, publisher, tag…',
     category: 'Category',
     subcategory: 'Subcategory',
